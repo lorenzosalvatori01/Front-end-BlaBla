@@ -1,0 +1,30 @@
+<form  [formGroup]='prova' (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="nome">nome</label>
+        <input id="nome" type="text" formControlName="nome">
+        <!-- Aggiungi messaggi di errore per il campo email -->
+    </div>
+
+    <div>
+        <label for="cognome">cognome</label>
+        <input id="cognome" type="text" formControlName="cognome">
+        <!-- Aggiungi messaggi di errore per il campo email -->
+    </div>
+    <!-- Campi del form -->
+    <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email">
+        <!-- Aggiungi messaggi di errore per il campo email -->
+    </div>
+  
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password">
+        <!-- Aggiungi messaggi di errore per il campo password -->
+    </div>
+  
+ 
+  
+    <button type="submit" >Submit</button>
+  </form>
