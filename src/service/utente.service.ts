@@ -7,17 +7,21 @@ import { Amministratore } from '../app/models/amministratore';
 })
 export class UtenteService {
 
-  private utente : Utente | Amministratore | undefined; 
+  
 
-   
-  constructor(){}
+  private currentUser: Utente | null = null;
 
- 
-  setUser(utente: Utente | Amministratore){
-      this.utente = utente; 
+  constructor() {}
+
+  setUser(user: Utente) {
+    this.currentUser = user;
   }
 
-  getUser(){
-      return this.utente;
+  getUser(): Utente | null {
+    return this.currentUser;
+  }
+
+  isAdministrator(): boolean {
+    return this.currentUser?.role === 'USER';
   }
 }

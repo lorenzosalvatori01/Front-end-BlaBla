@@ -1,5 +1,5 @@
 
-<div *ngIf="isEmployee && userType">
+<div *ngIf="!isUser()" >
 
   <div>
     <button (click)="reloadUsers()">Ricarica Utenti</button>
@@ -19,5 +19,12 @@
         </tr>
       </tbody>
     </table>
+
+
+    <div>
+      <!-- Altri dettagli dell'utente possono essere aggiunti qui -->
+    </div>
+
+    
   </div>
 </div>
