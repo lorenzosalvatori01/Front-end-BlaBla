@@ -9,12 +9,18 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 
 
 import { RegistraComponent } from './registra/registra.component';
+import { LoginComponent } from './login/login.component';
+import { UtenteComponent } from './utente/utente.component';
+import { HomeComponent } from './home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegistraComponent
-
+    RegistraComponent,
+    LoginComponent,
+    UtenteComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

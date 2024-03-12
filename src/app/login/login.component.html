@@ -1,0 +1,21 @@
+<form  [formGroup]='prova' (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email">
+        <!-- Aggiungi messaggi di errore per il campo email -->
+    </div>
+  
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password">
+        <!-- Aggiungi messaggi di errore per il campo password -->
+    </div>
+  
+    <p>{{giornoCorrente}}</p>
+ 
+  
+    <button type="submit" >Submit</button>
+  </form>
+
+  <div *ngIf="loginMessage">{{ loginMessage }}</div>
