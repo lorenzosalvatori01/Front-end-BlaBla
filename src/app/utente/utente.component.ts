@@ -1,7 +1,10 @@
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../service/auth.service';
-import { Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError, of } from 'rxjs';
+import { Utente } from '../models/utente';
+import { Amministratore } from '../models/amministratore';
+import { UtenteService } from '../../service/utente.service';
 
 
 @Component({
@@ -12,13 +15,36 @@ import { Observable, catchError, throwError } from 'rxjs';
 export class UtenteComponent implements OnInit{
 
   private apiUrl = 'http://localhost:8080/api/user';
+
+  userType: Utente | Amministratore | undefined;
+
+  isEmployee: boolean | undefined;
+
+ 
   users: any[] = [];  // Aggiungi questa riga per memorizzare gli utenti
 
   
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private utenteService :UtenteService
+    ) {
+
+    }
+
 
 
   ngOnInit() {
+
+    this.userType = this.utenteService.getUser();
+    if (this.userType instanceof Amministratore) {
+      this.isEmployee = true;
+      
+    } else if (this.userType instanceof Utente) {
+      this.isEmployee = false;
+     
+    }
+
     this.getUsers().subscribe(
       (users) => {
         // Assegna gli utenti alla proprietà users del componente
@@ -48,17 +74,24 @@ export class UtenteComponent implements OnInit{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
     // Esegui la chiamata HTTP con l'header aggiunto
-    return this.http.get<any[]>(`${this.apiUrl}/getUsers`, { headers })
-      .pipe(
-        catchError((error) => {
-          // Gestisci l'errore qui, se necessario
-          console.error('Errore durante la chiamata getUsers:', error);
-          // Ritorna un observable che rappresenta un errore
-          return throwError('Errore durante la chiamata getUsers');
-        })
-      );
+    if (this.userType instanceof Utente) {
+      return this.http.get<any[]>(`${this.apiUrl}/getUsers`, { headers })
+        .pipe(
+          catchError((error) => {
+            console.error('Errore durante la chiamata getUsers:', error);
+            return throwError(() => new Error('Errore durante la chiamata getUsers'));
+          })
+        );
+    } else {
+      // Gestisci il caso in cui this.userType non sia un'istanza di Utente
+      // Qui puoi decidere di restituire un Observable vuoto, uno con dati fittizi, o un errore
+      console.error('UserType non è un Utente');
+      // Ad esempio, restituire un Observable vuoto:
+      return of([]); // Restituisce un Observable che emette un array vuoto
+      // O restituire un errore:
+      // return throwError(() => new Error('UserType non è un Utente'));
+    }
   }
-
 
   reloadUsers() {
     this.getUsers().subscribe(

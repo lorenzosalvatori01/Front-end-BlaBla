@@ -1,19 +1,23 @@
-<div>
-  <button (click)="reloadUsers()">Ricarica Utenti</button>
-  
-  <table>
-    <thead>
-      <tr>
-        <th>username</th>
-        <!-- Aggiungi altre colonne se necessario -->
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.username}}</td>
-        
-        <!-- Aggiungi altre colonne se necessario -->
-      </tr>
-    </tbody>
-  </table>
+
+<div *ngIf="isEmployee && userType">
+
+  <div>
+    <button (click)="reloadUsers()">Ricarica Utenti</button>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>username</th>
+          <!-- Aggiungi altre colonne se necessario -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.username}}</td>
+          
+          <!-- Aggiungi altre colonne se necessario -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
