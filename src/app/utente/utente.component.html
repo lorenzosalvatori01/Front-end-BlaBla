@@ -1,5 +1,5 @@
 
-<div *ngIf="!isUser()" >
+<div *ngIf="isUser()" >
 
   <div>
     <button (click)="reloadUsers()">Ricarica Utenti</button>
@@ -22,7 +22,7 @@
 
 
     <div>
-      <!-- Altri dettagli dell'utente possono essere aggiunti qui -->
+      {{utente.nome}}
     </div>
 
     

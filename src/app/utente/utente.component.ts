@@ -18,6 +18,8 @@ export class UtenteComponent implements OnInit{
   private apiUrl = 'http://localhost:8080/api/user';
 
   nome :any ;
+  utente :any ;
+  role :any ;
 
   userType: Utente  | null = null;
 
@@ -41,26 +43,44 @@ export class UtenteComponent implements OnInit{
 
   ngOnInit() {
 
-    let nome = this.utenteService.getUser()?.getNome();
 
     const token = this.authService.getToken();
      if(token) {
-    this.user.getUsers(token).subscribe(
-      users => {
-        this.users = users;
-      },
-      error => {
-        console.error('Errore durante il recupero degli utenti:', error);
-      }
-    );
-  } else {
-    console.error('Token assente');
-  }
+      this.user.getUsers(token).subscribe(
+        users => {
+          this.users = users;
+        },
+        error => {
+          console.error('Errore durante il recupero degli utenti:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
+
+    if(token) {
+      this.user.getUser(token).subscribe(
+        users => {
+          this.utente = users;
+          this.role = users.role
+          console.log(this.role)
+        },
+        error => {
+          console.error('Errore durante il recupero degli utenti:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
   }
 
 
   isUser(): boolean {
-    return this.utenteService.isAdministrator();
+    if(this.role == "USER"){
+      return true
+    }else{
+      return false
+    }
   }
 
 

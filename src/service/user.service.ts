@@ -26,5 +26,18 @@ export class UserService {
   }
 
 
+  getUser(token: string): Observable<Utente> {
+    const apiUrl = 'http://localhost:8080/api/user/getUserData';
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  
+    return this.http.get<Utente>(apiUrl, { headers }).pipe(
+      catchError(error => {
+        console.error('Errore durante la chiamata getUsers:', error);
+        return throwError(() => new Error('Errore durante la chiamata getUsers'));
+      })
+    );
+  }
+
+
 
 }
