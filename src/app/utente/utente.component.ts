@@ -6,6 +6,8 @@ import { Utente } from '../models/utente';
 import { Amministratore } from '../models/amministratore';
 import { UtenteService } from '../../service/utente.service';
 import { UserService } from '../../service/user.service';
+import { BookingService } from '../../service/booking.service';
+import { BookingRequest } from '../models/booking-request';
 
 
 @Component({
@@ -33,7 +35,8 @@ export class UtenteComponent implements OnInit{
     private http: HttpClient,
     private authService: AuthService,
     private utenteService :UtenteService,
-    private user :UserService
+    private user :UserService,
+    private bookingService : BookingService,
     
     ) {
 
@@ -42,22 +45,52 @@ export class UtenteComponent implements OnInit{
 
 
   ngOnInit() {
+    this.recuperaTutti();
+    this.recuperadati();
+    this.book();
+
+  }
 
 
+  book() {
     const token = this.authService.getToken();
-     if(token) {
-      this.user.getUsers(token).subscribe(
-        users => {
-          this.users = users;
+    if(token){
+      const bookingData: BookingRequest = {
+        fascia_oraria_prenotazione: "ORE_10",
+        giorno_prenotazione: "VENERDI"
+      };
+    
+      this.bookingService.bookBooking(token, bookingData).subscribe(
+        response => {
+          console.log('Prenotazione effettuata con successo:', response);
         },
         error => {
-          console.error('Errore durante il recupero degli utenti:', error);
+          console.error('Errore durante la prenotazione:', error);
         }
       );
-    } else {
-      console.error('Token assente');
+    }
     }
 
+
+
+  recuperaTutti(){
+    const token = this.authService.getToken();
+    if(token) {
+     this.user.getUsers(token).subscribe(
+       users => {
+         this.users = users;
+       },
+       error => {
+         console.error('Errore durante il recupero degli utenti:', error);
+       }
+     );
+   } else {
+     console.error('Token assente');
+   }
+  }
+
+  recuperadati(){
+    const token = this.authService.getToken();
     if(token) {
       this.user.getUser(token).subscribe(
         users => {
@@ -71,10 +104,13 @@ export class UtenteComponent implements OnInit{
       );
     } else {
       console.error('Token assente');
-    }
+  }
+    
   }
 
 
+
+  //METODO PER AUTENTICARE 
   isUser(): boolean {
     if(this.role == "USER"){
       return true
