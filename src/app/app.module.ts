@@ -12,6 +12,7 @@ import { RegistraComponent } from './registra/registra.component';
 import { LoginComponent } from './login/login.component';
 import { UtenteComponent } from './utente/utente.component';
 import { HomeComponent } from './home/home.component';
+import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from './home/home.component';
     RegistraComponent,
     LoginComponent,
     UtenteComponent,
-    HomeComponent
+    HomeComponent,
+    PrenotazioniComponent
   ],
   imports: [
     BrowserModule,

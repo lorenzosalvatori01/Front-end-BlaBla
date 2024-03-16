@@ -5,12 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { UtenteComponent } from './utente/utente.component';
 import { AuthGuard } from './auth.guard';
 import { HomeComponent } from './home/home.component';
+import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 
 const routes: Routes = [
 
   {  path: 'registra',  component: RegistraComponent },
   {  path: 'login',  component: LoginComponent },
   {  path: 'utente',  component: UtenteComponent, canActivate: [AuthGuard]  },
+  {  path: 'prenotazioni',  component: PrenotazioniComponent, canActivate: [AuthGuard]  },
   {  path: 'home',  component: HomeComponent },
 ];
 
