@@ -50,9 +50,9 @@ export class LoginComponent {
         (response: any) => {
 
           const userLogged = new Utente(response.utente.id, response.utente.nome, response.utente.cognome, response.utente.email, response.utente.email, response.utente.email);
-          this.utenteService.setUser(userLogged);
+          // this.utenteService.setUser(userLogged);
 
-          console.log("nome " + userLogged.getNome());
+          // console.log("nome " + userLogged.getNome());
           // Gestisci la risposta di successo
           console.log('Risposta del server:', response);
 
@@ -61,7 +61,7 @@ export class LoginComponent {
           this.authService.setToken(response.token);
 
           alert('Login avvenuto con successo!');
-          this.router.navigate(['utente']);
+          this.router.navigate(['home']);
 
           // Opzionale: reindirizza l'utente a una rotta protetta
         },

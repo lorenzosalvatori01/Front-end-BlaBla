@@ -1,21 +1,48 @@
-<form  [formGroup]='prova' (ngSubmit)="onSubmit()">
-
-    <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
-        <!-- Aggiungi messaggi di errore per il campo email -->
-    </div>
-  
-    <div>
-        <label for="password">Password</label>
-        <input id="password" type="password" formControlName="password">
-        <!-- Aggiungi messaggi di errore per il campo password -->
-    </div>
-  
-    <p>{{giornoCorrente}}</p>
- 
-  
-    <button type="submit" >Submit</button>
-  </form>
-
   <div *ngIf="loginMessage">{{ loginMessage }}</div>
+  <body>
+    <nav>
+      <ul class="nav-bar">
+        <div class="title">SIT0WALO1.0</div>
+        <input
+          type="checkbox"
+          id="check" />
+        <label
+          for="check"
+          class="open-menu"
+          ><i
+            class="fas fa-bars"
+            style="color: white"></i
+        ></label>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <input
+        type="checkbox"
+        id="check" />
+      <div class="login form">
+        <header>Login</header>
+        <form [formGroup]='prova' (ngSubmit)="onSubmit()" action="#">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email">
+            <label for="password">Password</label>
+            <input id="password" type="password" formControlName="password">
+          <a href="#">Hai dimenticato la tua password?</a>
+          <button type="submit" >Submit</button>
+        </form>
+        <div class="signup">
+          <span class="signup"
+            >Non hai un account?
+            <label for="check">Registrati</label>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="ritorna">
+      <a href="./index.html">Torna alla home</a>
+    </div>
+
+ 
+  </body>
+
+  

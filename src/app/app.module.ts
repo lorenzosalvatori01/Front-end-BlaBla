@@ -12,7 +12,9 @@ import { RegistraComponent } from './registra/registra.component';
 import { LoginComponent } from './login/login.component';
 import { UtenteComponent } from './utente/utente.component';
 import { HomeComponent } from './home/home.component';
-import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
+import { LunediComponent } from './prenotazione/lunedi/lunedi.component';
+import { MartediComponent } from './prenotazione/martedi/martedi.component';
+import { MercolediComponent } from './prenotazione/mercoledi/mercoledi.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
     LoginComponent,
     UtenteComponent,
     HomeComponent,
-    PrenotazioniComponent
+    LunediComponent,
+    MartediComponent,
+    MercolediComponent
   ],
   imports: [
     BrowserModule,

@@ -56,8 +56,8 @@ export class UtenteComponent implements OnInit{
     const token = this.authService.getToken();
     if(token){
       const bookingData: BookingRequest = {
-        fascia_oraria_prenotazione: "ORE_10",
-        giorno_prenotazione: "VENERDI"
+        fascia_oraria_prenotazione: "ORE_11",
+        giorno_prenotazione: "MERCOLEDI"
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
