@@ -38,7 +38,7 @@ export class LunediComponent implements OnInit{
     if(token){
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: "ORE_15",
-        giorno_prenotazione: "MERCOLEDI"
+        giorno_prenotazione: "GIOVEDI"
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
