@@ -1,5 +1,5 @@
 
-<body style="background-color: aqua;">
+<body >
 
 
     <nav>
@@ -31,7 +31,7 @@
     <div class="contenitore-principale">
   
     <div class="contenitore-bottoni">
-      <button class="bottone"  (click)="lunedi()">Lunedì</button>
+      <button class="bottone"  (click)="lunedi()" style="background-color: #495057;">Lunedì</button>
       <button class="bottone" (click)="martedi()">Martedì</button>
       <button class="bottone">Mercoledì</button>
       <button class="bottone">Giovedì</button>
@@ -41,7 +41,6 @@
    
     <div class="contenitore2">
       <div class="carta">
-          <button  (click)="book()">
         <div class="prima-riga">
           <div class="left">
             <div class="indicatore"></div>
@@ -52,10 +51,9 @@
             <span style="font-weight: 600;">Lun:11:00</span>
           </div>
         </div>
-      </button>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <span style="color: #2e2e2e; font-size: 0.9rem;">Clicca per prenotare</span>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book()"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">

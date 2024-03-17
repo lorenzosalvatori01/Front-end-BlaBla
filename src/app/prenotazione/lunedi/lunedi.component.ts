@@ -30,6 +30,9 @@ export class LunediComponent implements OnInit{
 
 
 
+
+
+
   book() {
     const token = this.authService.getToken();
     if(token){
@@ -40,7 +43,7 @@ export class LunediComponent implements OnInit{
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
         response => {
-          alert("Prenotazione effettuata con succs")
+          alert(response.message)
           console.log('Prenotazione effettuata con successo:', response);
         },
         error => {

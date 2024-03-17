@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registra',
-  templateUrl: './registra.component.html',
-  styleUrl: './registra.component.css'
+  selector: 'app-registrazione-utente',
+  templateUrl: './registrazione-utente.component.html',
+  styleUrl: './registrazione-utente.component.css'
 })
-export class RegistraComponent {
+export class RegistrazioneUtenteComponent {
 
-  prova: FormGroup;
+  reg: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.prova = this.fb.group({
+    this.reg = this.fb.group({
       nome: ['', [Validators.required,]],
       numero: ['', [Validators.required,]],
       cognome: ['', [Validators.required,]],
@@ -23,9 +23,9 @@ export class RegistraComponent {
   }
 
   
-  onSubmit() {
-    if (this.prova.valid) {
-      const userData = this.prova.value;
+  registra() {
+    if (this.reg.valid) {
+      const userData = this.reg.value;
       this.http.post('http://localhost:8080/api/user/createUser', userData)
         .subscribe(
           (response) => {
@@ -43,6 +43,5 @@ export class RegistraComponent {
       console.error('Il form non è valido');
     }
   }
-
 
 }

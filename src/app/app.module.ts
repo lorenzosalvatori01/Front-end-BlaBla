@@ -16,6 +16,9 @@ import { MartediComponent } from './prenotazione/martedi/martedi.component';
 import { MercolediComponent } from './prenotazione/mercoledi/mercoledi.component';
 import { LoginUtenteComponent } from './login1/login-utente/login-utente.component';
 import { LoginAmministratoreComponent } from './login1/login-amministratore/login-amministratore.component';
+import { RegistrazioneUtenteComponent } from './registrazione/registrazione-utente/registrazione-utente.component';
+import { RegistrazioneAmministratoreComponent } from './registrazione/registrazione-amministratore/registrazione-amministratore.component';
+
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { LoginAmministratoreComponent } from './login1/login-amministratore/logi
     MartediComponent,
     MercolediComponent,
     LoginUtenteComponent,
-    LoginAmministratoreComponent
+    LoginAmministratoreComponent,
+    RegistrazioneUtenteComponent,
+    RegistrazioneAmministratoreComponent,
+
   ],
   imports: [
     BrowserModule,
