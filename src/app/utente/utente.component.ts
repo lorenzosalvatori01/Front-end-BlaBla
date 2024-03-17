@@ -17,18 +17,10 @@ import { BookingRequest } from '../models/booking-request';
 })
 export class UtenteComponent implements OnInit{
 
-  private apiUrl = 'http://localhost:8080/api/user';
 
-  nome :any ;
-  utente :any ;
-  role :any ;
-
-  userType: Utente  | null = null;
-
-  isEmployee: boolean | undefined;
-
+  utente!:Utente;
  
-  users: any[] = [];  // Aggiungi questa riga per memorizzare gli utenti
+  users: Utente[] = [];  // Aggiungi questa riga per memorizzare gli utenti
 
   
   constructor(
@@ -95,8 +87,6 @@ export class UtenteComponent implements OnInit{
       this.user.getUser(token).subscribe(
         users => {
           this.utente = users;
-          this.role = users.role
-          console.log(this.role)
         },
         error => {
           console.error('Errore durante il recupero degli utenti:', error);
@@ -112,7 +102,7 @@ export class UtenteComponent implements OnInit{
 
   //METODO PER AUTENTICARE 
   isUser(): boolean {
-    if(this.role == "USER"){
+    if(this.utente?.role == "USER"){
       return true
     }else{
       return false
@@ -120,42 +110,6 @@ export class UtenteComponent implements OnInit{
   }
 
 
-
-
-  // getUsers(): Observable<any> {
-  //   // Recupera il token dal servizio di autenticazione
-  //   const token = this.authService.getToken();
-
-  //   if (!token) {
-  //     // Puoi gestire l'assenza di token in modo appropriato (reindirizzamento, logout, ecc.)
-  //     console.error('Token assente');
-      
-  //     // Ritorna un observable che rappresenta un errore
-  //     return throwError('Token assente');
-  //   }
-
-  //   // Aggiungi il token all'header della richiesta
-  //   const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-
-  //   // Esegui la chiamata HTTP con l'header aggiunto
-  //   if (this.userType instanceof Utente) {
-  //     return this.http.get<any[]>(`${this.apiUrl}/getUsers`, { headers })
-  //       .pipe(
-  //         catchError((error) => {
-  //           console.error('Errore durante la chiamata getUsers:', error);
-  //           return throwError(() => new Error('Errore durante la chiamata getUsers'));
-  //         })
-  //       );
-  //   } else {
-  //     // Gestisci il caso in cui this.userType non sia un'istanza di Utente
-  //     // Qui puoi decidere di restituire un Observable vuoto, uno con dati fittizi, o un errore
-  //     console.error('UserType non è un Utente');
-  //     // Ad esempio, restituire un Observable vuoto:
-  //     return of([]); // Restituisce un Observable che emette un array vuoto
-  //     // O restituire un errore:
-  //     // return throwError(() => new Error('UserType non è un Utente'));
-  //   }
-  // }
 
   reloadUsers() {
     const token = this.authService.getToken();

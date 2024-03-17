@@ -18,7 +18,7 @@
     width: 100%;
     height: 30vh;
     z-index: 0; /* Posiziona l'immagine dietro la navbar */
-    background-image: url("../../assets/images/header.jpg");
+    background-image: url("../../../assets/images/header.jpg");
     background-position: top left;
     background-size: cover;
     border-bottom-left-radius: 1.5rem;
@@ -128,6 +128,7 @@
       background-color: var(--color1);
       color: var(--color2);
       transition: all 0.2s ease-in-out;
+      transform: translateX(100%);
     }
     .menu li {
       margin-top: 20px;
@@ -140,7 +141,7 @@
       display: block;
     }
     #check:checked ~ .menu {
-      transform: translateX(100%);
+      transform: translateX(0);
     }
   }
   

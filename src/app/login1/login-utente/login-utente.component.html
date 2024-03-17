@@ -1,4 +1,4 @@
-  <div *ngIf="loginMessage">{{ loginMessage }}</div>
+
   <body>
     <nav>
       <ul class="nav-bar">
@@ -6,6 +6,16 @@
         <input
           type="checkbox"
           id="check" />
+        <span class="menu">
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./signup.html">Sing-Up</a></li>
+          <label
+            for="check"
+            class="close-menu"
+            ><i class="fas fa-times"></i
+          ></label>
+        </span>
         <label
           for="check"
           class="open-menu"
@@ -22,13 +32,17 @@
         id="check" />
       <div class="login form">
         <header>Login</header>
-        <form [formGroup]='prova' (ngSubmit)="onSubmit()" action="#">
-            <label for="email">Email</label>
-            <input id="email" type="email" formControlName="email">
-            <label for="password">Password</label>
-            <input id="password" type="password" formControlName="password">
+        <form  [formGroup]='prova' action="#">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email">
+          <label for="password">Password</label>
+          <input id="password" type="password" formControlName="password">
           <a href="#">Hai dimenticato la tua password?</a>
-          <button type="submit" >Submit</button>
+          <input
+          type="button"
+          class="button"
+          value="Login" (click)="onSubmit()"/>
+
         </form>
         <div class="signup">
           <span class="signup"
@@ -41,8 +55,4 @@
     <div class="ritorna">
       <a href="./index.html">Torna alla home</a>
     </div>
-
- 
   </body>
-
-  

@@ -9,24 +9,26 @@ import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common
 
 
 import { RegistraComponent } from './registra/registra.component';
-import { LoginComponent } from './login/login.component';
 import { UtenteComponent } from './utente/utente.component';
 import { HomeComponent } from './home/home.component';
 import { LunediComponent } from './prenotazione/lunedi/lunedi.component';
 import { MartediComponent } from './prenotazione/martedi/martedi.component';
 import { MercolediComponent } from './prenotazione/mercoledi/mercoledi.component';
+import { LoginUtenteComponent } from './login1/login-utente/login-utente.component';
+import { LoginAmministratoreComponent } from './login1/login-amministratore/login-amministratore.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistraComponent,
-    LoginComponent,
     UtenteComponent,
     HomeComponent,
     LunediComponent,
     MartediComponent,
-    MercolediComponent
+    MercolediComponent,
+    LoginUtenteComponent,
+    LoginAmministratoreComponent
   ],
   imports: [
     BrowserModule,

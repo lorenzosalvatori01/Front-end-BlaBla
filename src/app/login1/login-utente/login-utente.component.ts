@@ -1,20 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../service/auth.service';
+import { AuthService } from '../../../service/auth.service';
 import { ActivatedRoute, Router, UrlTree } from '@angular/router';
-import { UtenteService } from '../../service/utente.service';
-import { Utente } from '../models/utente';
+import { UtenteService } from '../../../service/utente.service';
+import { Utente } from '../../models/utente';
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
-  
+  selector: 'app-login-utente',
+  templateUrl: './login-utente.component.html',
+  styleUrl: './login-utente.component.css'
 })
-export class LoginComponent {
-
+export class LoginUtenteComponent {
   prova: FormGroup;
   private tokenKey = 'authToken';
   loginMessage: string | null;

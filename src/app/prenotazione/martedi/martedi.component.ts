@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -8,7 +8,9 @@ import { Router } from '@angular/router';
   styleUrl: './martedi.component.css'
 })
 export class MartediComponent {
+
   
+
   constructor(private router: Router) {}
 
   
