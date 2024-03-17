@@ -40,6 +40,14 @@ export class LoginUtenteComponent {
     
   }
 
+  login() {
+    this.router.navigate(['/loginUtente']);
+  }
+
+  registrazione() {
+    this.router.navigate(['/registraUtente']);
+  }
+
   
   onSubmit() {
     if (this.prova.valid) {
