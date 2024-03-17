@@ -1,5 +1,5 @@
 
-  <body>
+ <body>
     <div class="immagine-sfondo">   
     </div>
     <nav>
@@ -32,11 +32,14 @@
     </nav>
 
     <div class="container">
+      
       <input
         type="checkbox"
         id="check" />
       <div class="login form">
         <header>Login</header>
+        <div *ngIf="loginMessage">{{ loginMessage }}</div>
+
         <form  [formGroup]='prova' action="#">
           <label for="email">Email</label>
           <input id="email" type="email" formControlName="email">

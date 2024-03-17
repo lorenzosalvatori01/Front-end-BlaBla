@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,8 +9,16 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authService : AuthService
+    ) {}
 
+
+
+  logOut(){
+    this.authService.logout();
+  }
 
   prenota() {
     this.router.navigate(['/lunedi']);
