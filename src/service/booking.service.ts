@@ -21,4 +21,16 @@ export class BookingService {
       })
     );
   }
+
+  getBooking(token: string): Observable<any[]> {
+    const apiUrl = 'http://localhost:8080/api/booking/allBookings';
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  
+    return this.http.get<any[]>(apiUrl, { headers }).pipe(
+      catchError(error => {
+        console.error('Errore durante la chiamata getUsers:', error);
+        return throwError(() => new Error('Errore durante la chiamata getUsers'));
+      })
+    );
+  }
 }

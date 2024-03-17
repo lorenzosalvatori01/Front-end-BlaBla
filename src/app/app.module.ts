@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+
 
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 
@@ -19,6 +21,7 @@ import { LoginAmministratoreComponent } from './login1/login-amministratore/logi
 import { RegistrazioneUtenteComponent } from './registrazione/registrazione-utente/registrazione-utente.component';
 import { RegistrazioneAmministratoreComponent } from './registrazione/registrazione-amministratore/registrazione-amministratore.component';
 import { HomeAmministratoreComponent } from './home-amministratore/home-amministratore.component';
+import { PrenotazioneAmministratoreComponent } from './prenotazione-amministratore/prenotazione-amministratore.component';
 
 
 
@@ -36,6 +39,7 @@ import { HomeAmministratoreComponent } from './home-amministratore/home-amminist
     RegistrazioneUtenteComponent,
     RegistrazioneAmministratoreComponent,
     HomeAmministratoreComponent,
+    PrenotazioneAmministratoreComponent,
 
   ],
   imports: [
@@ -43,7 +47,8 @@ import { HomeAmministratoreComponent } from './home-amministratore/home-amminist
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
 
   ],
   providers: [],

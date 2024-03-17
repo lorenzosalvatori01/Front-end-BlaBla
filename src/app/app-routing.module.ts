@@ -11,6 +11,7 @@ import { LoginUtenteComponent } from './login1/login-utente/login-utente.compone
 import { RegistrazioneUtenteComponent } from './registrazione/registrazione-utente/registrazione-utente.component';
 import { HomeAmministratoreComponent } from './home-amministratore/home-amministratore.component';
 import { LoginAmministratoreComponent } from './login1/login-amministratore/login-amministratore.component';
+import { PrenotazioneAmministratoreComponent } from './prenotazione-amministratore/prenotazione-amministratore.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {  path: 'registraUtente',  component: RegistrazioneUtenteComponent },
   {  path: 'loginUtente',  component: LoginUtenteComponent },
   {  path: 'loginAmministratore',  component: LoginAmministratoreComponent },
+  {  path: 'prenotazioni',  component: PrenotazioneAmministratoreComponent },
   {  path: 'utente',  component: UtenteComponent, canActivate: [AuthGuard]  },
   {  path: 'lunedi',  component: LunediComponent, canActivate: [AuthGuard]  },
   {  path: 'martedi',  component: MartediComponent, canActivate: [AuthGuard]  },
