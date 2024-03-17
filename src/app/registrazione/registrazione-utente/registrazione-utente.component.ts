@@ -31,6 +31,7 @@ export class RegistrazioneUtenteComponent {
             // Gestisci la risposta di successo
             console.log('Risposta del server:', response);
             alert("Registrazione avvenuta con successo!")
+            this.reg.reset();
           },
           (error) => {
             // Gestisci l'errore
