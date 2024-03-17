@@ -14,5 +14,9 @@ export class HomeComponent {
     this.router.navigate(['/lunedi']);
   }
 
+  login() {
+    this.router.navigate(['/loginUtente']);
+  }
+
 
 }
