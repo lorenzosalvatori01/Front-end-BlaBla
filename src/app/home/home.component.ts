@@ -18,5 +18,9 @@ export class HomeComponent {
     this.router.navigate(['/loginUtente']);
   }
 
+  home() {
+    this.router.navigate(['/home']);
+  }
+
 
 }

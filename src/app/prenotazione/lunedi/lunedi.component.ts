@@ -63,6 +63,9 @@ export class LunediComponent implements OnInit{
     this.router.navigate(['/martedi']);
   }
 
+  mercoledi() {
+    this.router.navigate(['/mercoledi']);
+  }
  
 
 }
