@@ -18,6 +18,7 @@ import { LoginUtenteComponent } from './login1/login-utente/login-utente.compone
 import { LoginAmministratoreComponent } from './login1/login-amministratore/login-amministratore.component';
 import { RegistrazioneUtenteComponent } from './registrazione/registrazione-utente/registrazione-utente.component';
 import { RegistrazioneAmministratoreComponent } from './registrazione/registrazione-amministratore/registrazione-amministratore.component';
+import { HomeAmministratoreComponent } from './home-amministratore/home-amministratore.component';
 
 
 
@@ -34,6 +35,7 @@ import { RegistrazioneAmministratoreComponent } from './registrazione/registrazi
     LoginAmministratoreComponent,
     RegistrazioneUtenteComponent,
     RegistrazioneAmministratoreComponent,
+    HomeAmministratoreComponent,
 
   ],
   imports: [

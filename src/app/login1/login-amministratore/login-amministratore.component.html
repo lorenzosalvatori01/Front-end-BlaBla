@@ -1,1 +1,58 @@
-<p>login-amministratore works!</p>
+
+<body>
+    <nav>
+      <ul class="nav-bar">
+        <div class="title">SIT0WALO1.0</div>
+        <input
+          type="checkbox"
+          id="check" />
+        <span class="menu">
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./loginUtente.html">Login</a></li>
+          <li><a href="./signup.html">Sing-Up</a></li>
+          <label
+            for="check"
+            class="close-menu"
+            ><i class="fas fa-times"></i
+          ></label>
+        </span>
+        <label
+          for="check"
+          class="open-menu"
+          ><i
+            class="fas fa-bars"
+            style="color: white"></i
+        ></label>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <input
+        type="checkbox"
+        id="check" />
+      <div class="login form">
+        <header>Login</header>
+        <form  [formGroup]='reg' action="#">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email">
+          <label for="password">Password</label>
+          <input id="password" type="password" formControlName="password">
+          <a href="#">Hai dimenticato la tua password?</a>
+          <input
+          type="button"
+          class="button"
+          value="Login" (click)="loginAdmin()"/>
+
+        </form>
+        <div class="signup">
+          <span class="signup"
+            >Non hai un account?
+            <a (click)="registrazione()">Registrati</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="ritorna">
+      <a href="./index.html">Torna alla home</a>
+    </div>
+  </body>
