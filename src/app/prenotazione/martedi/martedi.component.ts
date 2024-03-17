@@ -36,6 +36,10 @@ export class MartediComponent {
     this.router.navigate(['/martedi']);
   }
 
+  mercoledi() {
+    this.router.navigate(['/mercoledi']);
+  }
+
   book() {
     const token = this.authService.getToken();
     if(token){

@@ -48,6 +48,11 @@ export class LoginUtenteComponent {
     this.router.navigate(['/registraUtente']);
   }
 
+  home() {
+    this.router.navigate(['/home']);
+  }
+
+
   
   onSubmit() {
     if (this.prova.valid) {

@@ -31,17 +31,20 @@
     <div class="contenitore-principale">
   
     <div class="contenitore-bottoni">
-      <button class="bottone">Lunedì</button>
-      <button class="bottone">Martedì</button>
-      <button class="bottone">Mercoledì</button>
+      <button class="bottone" (click)="lunedi()">Lunedì</button>
+      <button class="bottone" (click)="martedi()">Martedì</button>
+      <button class="bottone" (click)="mercoledi()" style="background-color: #495057;">Mercoledì</button>
       <button class="bottone">Giovedì</button>
       <button class="bottone">Venerdì</button>
     </div>
   
-   
+    <div style="margin-bottom: -50px;">
+      <h1>Mercoledi</h1>
+    </div>
+
     <div class="contenitore2">
       <div class="carta">
-          <button  (click)="prenota()">
+          
         <div class="prima-riga">
           <div class="left">
             <div class="indicatore"></div>
@@ -49,13 +52,12 @@
           </div>
           <div class="right">
             <span style="color: #9a9a9a; ">Orario</span>
-            <span style="font-weight: 600;">11:00</span>
+            <span style="font-weight: 600;">Mar:11:00</span>
           </div>
         </div>
-      </button>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <span style="color: #2e2e2e; font-size: 0.9rem;">Clicca per prenotare</span>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book()"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">
