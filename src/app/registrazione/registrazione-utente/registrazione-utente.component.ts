@@ -14,7 +14,6 @@ export class RegistrazioneUtenteComponent {
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.reg = this.fb.group({
       nome: ['', [Validators.required,]],
-      numero: ['', [Validators.required,]],
       cognome: ['', [Validators.required,]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
