@@ -44,7 +44,7 @@
 
     <div class="contenitore2">
       <div class="carta">
-          <button  (click)="prenota()">
+          
         <div class="prima-riga">
           <div class="left">
             <div class="indicatore"></div>
@@ -55,10 +55,9 @@
             <span style="font-weight: 600;">Mar:11:00</span>
           </div>
         </div>
-      </button>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <span style="color: #2e2e2e; font-size: 0.9rem;">Clicca per prenotare</span>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book()"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">
