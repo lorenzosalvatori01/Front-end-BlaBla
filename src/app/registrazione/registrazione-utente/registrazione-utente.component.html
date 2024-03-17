@@ -36,29 +36,17 @@
           <form  [formGroup]='reg' action="#">
             <div class="signup-row">
               <div class="signup-col">
-                <input
-                  type="text"
-                  placeholder="Nome" />
-                <input
-                  type="number"
-                  placeholder="Numero di telefono" />
+                <label for="nome">nome</label>
+                <input id="nome" type="text" formControlName="nome">
+                <label for="cognome">cognome</label>
+                 <input id="cognome" type="text" formControlName="cognome">
               </div>
               <div class="signup-col">
-                <input
-                  type="text"
-                  placeholder="Cognome" />
-                <input
-                  type="text"
-                  placeholder="Inserisci la tua email" />
+                <label for="email">Email</label>
+                <input id="email" type="text" formControlName="email">
+                <label for="password">password</label>
+              <input id="password" type="password" formControlName="password">
               </div>
-            </div>
-            <div class="signup-row">
-              <div class="signup-col">
-                <input
-                  type="password"
-                  placeholder="Crea una password" />
-              </div>
-              <div class="signup-col"></div>
             </div>
             <input
               type="button"
