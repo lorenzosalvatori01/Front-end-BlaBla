@@ -1,23 +1,18 @@
 
   <body>
-    <!-- <div class="immagine-sfondo"></div> -->
+    <div class="immagine-sfondo"></div>
 
     <nav>
       <ul class="nav-bar">
         <div class="title">
-          <img
-            src="/src/assets/icons/profilo.png"
-            alt="icona profilo"
-            class="icona-profilo" />
+          <a (click)="home()"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></a>
         </div>
         <input
           type="checkbox"
           id="check" />
         <div class="menu">
           <div class="menu-container">
-            <li><a href="./about.html">About</a></li>
-            <li><a href="./login.html">Login</a></li>
-            <li><a href=".signup.html">Sing-Up</a></li>
+            <li><a (click)="login()">Logout</a></li>
           </div>
           <label
             for="check"

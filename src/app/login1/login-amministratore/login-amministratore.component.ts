@@ -49,6 +49,9 @@ export class LoginAmministratoreComponent {
     this.router.navigate(['/registraUtente']);
   }
 
+  home() {
+    this.router.navigate(['/home']);
+  }
   
   loginAdmin() {
     if (this.reg.valid) {
