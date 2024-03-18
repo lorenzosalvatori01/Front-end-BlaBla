@@ -40,6 +40,7 @@ export class UtenteComponent implements OnInit{
     this.recuperaTutti();
     this.recuperadati();
     this.book();
+    this.printCurrentDay();
 
   }
 
@@ -127,5 +128,12 @@ export class UtenteComponent implements OnInit{
     );
   }
 }
+
+printCurrentDay(): void {
+  const currentDate = new Date();
+  const currentDay = currentDate.toLocaleDateString('it-IT', { weekday: 'long' });
+  console.log('Oggi è:', currentDay);
+}
+
 
 }

@@ -23,10 +23,13 @@ export class MartediComponent {
     
   }
 
-  
-  prenota(){
-    alert("hello")
+  checkIfMondayOrTuesday(): boolean {
+    const currentDate = new Date();
+    const dayOfWeek = currentDate.getDay();
+    return dayOfWeek === 1 || dayOfWeek === 2; // 1 è Lunedì, 2 è Martedì
   }
+  
+ 
 
   lunedi() {
     this.router.navigate(['/lunedi']);
