@@ -18,6 +18,7 @@ import { BookingRequest } from '../models/booking-request';
 export class PrenotazioneAmministratoreComponent  implements OnInit{
 
   prenotazioni: any[] = [];  // Aggiungi questa riga per memorizzare gli utenti
+  prenotazioniLunedi: any[] = [];  // Aggiungi questa riga per memorizzare gli utenti
   tutti: boolean = true;  // Aggiungi questa riga per memorizzare gli utenti
   lunedi : boolean = false;
   martedi : boolean = false;
@@ -37,6 +38,7 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
 
 
     ngOnInit(): void {
+        this.recuperaDiLunedi();
         this.recuperaTutti();
     }
 
@@ -92,4 +94,24 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
      console.error('Token assente');
    }
   }
+
+  
+  recuperaDiLunedi(){
+    const token = this.authService.getToken();
+    const bookData = { giorno_prenotazione: "LUNEDI" }; // Se `bookingData` deve essere un oggetto
+    if(token) {
+      this.bookingService.getLunedi(token, bookData).subscribe(
+        book => {
+          this.prenotazioniLunedi = book;
+          console.log(book);
+        },
+        error => {
+          console.error('Errore durante il recupero delle prenotazioni:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
+  }
+  
 }

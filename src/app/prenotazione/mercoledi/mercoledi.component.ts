@@ -41,7 +41,8 @@ export class MercolediComponent {
     if(token){
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: "ORE_15",
-        giorno_prenotazione: "MERCOLEDI"
+        giorno_prenotazione: "MERCOLEDI",
+        indirizzo: "cus-camerino",
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(

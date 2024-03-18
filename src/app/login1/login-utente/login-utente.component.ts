@@ -87,5 +87,11 @@ export class LoginUtenteComponent {
     }
   }
 
+  loginAdmin(){
+    this.router.navigate(['/loginAmministratore']);
+
+
+  }
+
 
 }

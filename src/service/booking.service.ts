@@ -33,4 +33,16 @@ export class BookingService {
       })
     );
   }
+
+  getLunedi(token: string, bookingData: any): Observable<any[]> {
+    const apiUrl = 'http://localhost:8080/api/booking/getDayBookings';
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  
+    return this.http.post<any[]>(apiUrl, bookingData, { headers }).pipe(
+      catchError(error => {
+        console.error('Errore durante la chiamata getBook:', error);
+        return throwError(() => new Error('Errore durante la chiamata getBook'));
+      })
+    );
+  }
 }
