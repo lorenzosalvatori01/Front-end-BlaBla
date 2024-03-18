@@ -8,6 +8,8 @@ import { UtenteService } from '../../service/utente.service';
 import { UserService } from '../../service/user.service';
 import { BookingService } from '../../service/booking.service';
 import { BookingRequest } from '../models/booking-request';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -31,7 +33,7 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
     private utenteService :UtenteService,
     private user :UserService,
     private bookingService : BookingService,
-    
+    private router: Router,    
     ) {
 
     }
@@ -76,6 +78,13 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
 
     ciao(){
       this.mercoledi = true;
+    }
+    login() {
+      this.router.navigate(['/loginUtente']);
+    }
+
+    home() {
+      this.router.navigate(['/homeAmministratore']);
     }
 
   recuperaTutti(){

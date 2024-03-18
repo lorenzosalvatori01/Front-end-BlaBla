@@ -54,6 +54,13 @@ export class LunediComponent implements OnInit{
     }
     }
 
+    home() {
+      this.router.navigate(['/home']);
+    }
+    
+    logOut(){
+      this.authService.logout();
+    }
 
   //route
   lunedi() {
