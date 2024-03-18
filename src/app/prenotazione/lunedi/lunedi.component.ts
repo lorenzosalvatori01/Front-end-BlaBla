@@ -11,6 +11,9 @@ import { BookingService } from '../../../service/booking.service';
   styleUrl: './lunedi.component.css'
 })
 export class LunediComponent implements OnInit{
+
+  isMonday: boolean = false;
+
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -20,11 +23,21 @@ export class LunediComponent implements OnInit{
     ) {}
 
   ngOnInit(): void {
+    this.isMonday = this.checkIfMonday();
+
       
   }
+
   
-  prenota(){
-    alert("hello")
+  // printCurrentDay(): void {
+  //   const currentDate = new Date();
+  //   const currentDay = currentDate.toLocaleDateString('it-IT', { weekday: 'long' });
+  //   console.log('Oggi è:', currentDay);
+  // }
+
+  checkIfMonday(): boolean {
+    const currentDate = new Date();
+    return currentDate.getDay() === 1; // 0 è Domenica, 1 è Lunedì, ecc.
   }
 
 

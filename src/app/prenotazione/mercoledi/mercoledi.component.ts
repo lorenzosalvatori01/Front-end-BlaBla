@@ -57,4 +57,10 @@ export class MercolediComponent {
     }
     }
 
+    checkIfMondayTuesdayOrWednesday(): boolean {
+      const currentDate = new Date();
+      const dayOfWeek = currentDate.getDay();
+      return dayOfWeek === 1 || dayOfWeek === 2 || dayOfWeek === 3; // 1 è Lunedì, 2 è Martedì, 3 è Mercoledì
+    }
+
 }
