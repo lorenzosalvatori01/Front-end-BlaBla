@@ -4,11 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
-
-
+// Importa MatDialogModule per utilizzare i modali
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { RegistraComponent } from './registra/registra.component';
 import { UtenteComponent } from './utente/utente.component';
@@ -22,8 +22,7 @@ import { RegistrazioneUtenteComponent } from './registrazione/registrazione-uten
 import { RegistrazioneAmministratoreComponent } from './registrazione/registrazione-amministratore/registrazione-amministratore.component';
 import { HomeAmministratoreComponent } from './home-amministratore/home-amministratore.component';
 import { PrenotazioneAmministratoreComponent } from './prenotazione-amministratore/prenotazione-amministratore.component';
-
-
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +39,7 @@ import { PrenotazioneAmministratoreComponent } from './prenotazione-amministrato
     RegistrazioneAmministratoreComponent,
     HomeAmministratoreComponent,
     PrenotazioneAmministratoreComponent,
-
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,10 +47,11 @@ import { PrenotazioneAmministratoreComponent } from './prenotazione-amministrato
     FormsModule, 
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
-
+    CommonModule,
+    BrowserAnimationsModule, // Importa BrowserAnimationsModule per utilizzare i modali
+    MatDialogModule // Importa MatDialogModule per utilizzare i modali
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

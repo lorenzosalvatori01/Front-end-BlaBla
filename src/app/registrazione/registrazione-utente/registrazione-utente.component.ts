@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../../modal/modal.component';
 
 @Component({
   selector: 'app-registrazione-utente',
@@ -11,16 +13,24 @@ export class RegistrazioneUtenteComponent {
 
   reg: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, public dialog: MatDialog) {
     this.reg = this.fb.group({
       nome: ['', [Validators.required,]],
       cognome: ['', [Validators.required,]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
+      telefono: ['', [Validators.required,]],
       
     });
   }
 
+
+  openModal(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '400px', // Specifica la larghezza del modal
+      data: { } // Dati da passare al modal, se necessario
+    });
+  }
   
   registra() {
     if (this.reg.valid) {
@@ -29,8 +39,8 @@ export class RegistrazioneUtenteComponent {
         .subscribe(
           (response) => {
             // Gestisci la risposta di successo
+            this.openModal();
             console.log('Risposta del server:', response);
-            alert("Registrazione avvenuta con successo!")
             this.reg.reset();
           },
           (error) => {
