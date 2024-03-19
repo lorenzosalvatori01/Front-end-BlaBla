@@ -29,6 +29,7 @@ export class MartediComponent {
     return dayOfWeek === 1 || dayOfWeek === 2; // 1 è Lunedì, 2 è Martedì
   }
   
+  
  
 
   lunedi() {
@@ -51,13 +52,13 @@ export class MartediComponent {
     this.router.navigate(['/venerdi']);
   }
 
-  book() {
+  book(ora : string){
     const token = this.authService.getToken();
     if(token){
       const bookingData: BookingRequest = {
-        fascia_oraria_prenotazione: "ORE_15",
-        giorno_prenotazione: "MERCOLEDI",
-        indirizzo: "MERCOLEDI",
+        fascia_oraria_prenotazione: ora,
+        giorno_prenotazione: "MARTEDI",
+        indirizzo: "cus-camerino",
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
@@ -70,6 +71,7 @@ export class MartediComponent {
         }
       );
     }
-    }
+  }
+
 
 }

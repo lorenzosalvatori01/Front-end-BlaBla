@@ -47,7 +47,7 @@ export class LunediComponent implements OnInit{
     if(token){
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: ora,
-        giorno_prenotazione: "GIOVEDI",
+        giorno_prenotazione: "LUNEDI",
         indirizzo: "cus-camerino",
       };
     
@@ -63,10 +63,6 @@ export class LunediComponent implements OnInit{
     }
   }
 
-
-  
-
-  
     logOut(){
       this.authService.logout();
     }
