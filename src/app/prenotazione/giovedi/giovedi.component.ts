@@ -4,13 +4,12 @@ import { BookingRequest } from '../../models/booking-request';
 import { AuthService } from '../../../service/auth.service';
 import { BookingService } from '../../../service/booking.service';
 
-
 @Component({
-  selector: 'app-lunedi',
-  templateUrl: './lunedi.component.html',
-  styleUrl: './lunedi.component.css'
+  selector: 'app-giovedi',
+  templateUrl: './giovedi.component.html',
+  styleUrl: './giovedi.component.css'
 })
-export class LunediComponent implements OnInit{
+export class GiovediComponent {
 
   isMonday: boolean = false;
 
@@ -83,7 +82,7 @@ export class LunediComponent implements OnInit{
   mercoledi() {
     this.router.navigate(['/mercoledi']);
   }
-  
+
   giovedi() {
     this.router.navigate(['/giovedi']);
   }
@@ -92,6 +91,7 @@ export class LunediComponent implements OnInit{
     this.router.navigate(['/venerdi']);
   }
 
+
   home() {
     this.router.navigate(['/home']);
   }
@@ -99,3 +99,4 @@ export class LunediComponent implements OnInit{
  
 
 }
+

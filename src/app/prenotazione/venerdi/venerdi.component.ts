@@ -1,19 +1,17 @@
-import { Component, input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookingRequest } from '../../models/booking-request';
 import { AuthService } from '../../../service/auth.service';
 import { BookingService } from '../../../service/booking.service';
 
-
 @Component({
-  selector: 'app-martedi',
-  templateUrl: './martedi.component.html',
-  styleUrl: './martedi.component.css'
+  selector: 'app-venerdi',
+  templateUrl: './venerdi.component.html',
+  styleUrl: './venerdi.component.css'
 })
-export class MartediComponent {
+export class VenerdiComponent {
 
   
-
   constructor(
     
     private router: Router,
@@ -22,14 +20,10 @@ export class MartediComponent {
 
     
   }
-
-  checkIfMondayOrTuesday(): boolean {
-    const currentDate = new Date();
-    const dayOfWeek = currentDate.getDay();
-    return dayOfWeek === 1 || dayOfWeek === 2; // 1 è Lunedì, 2 è Martedì
-  }
   
- 
+  prenota(){
+    alert("hello")
+  }
 
   lunedi() {
     this.router.navigate(['/lunedi']);
@@ -57,7 +51,7 @@ export class MartediComponent {
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: "ORE_15",
         giorno_prenotazione: "MERCOLEDI",
-        indirizzo: "MERCOLEDI",
+        indirizzo: "cus-camerino",
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
@@ -70,6 +64,12 @@ export class MartediComponent {
         }
       );
     }
+    }
+
+    checkIfMondayTuesdayOrWednesday(): boolean {
+      const currentDate = new Date();
+      const dayOfWeek = currentDate.getDay();
+      return dayOfWeek === 1 || dayOfWeek === 2 || dayOfWeek === 3; // 1 è Lunedì, 2 è Martedì, 3 è Mercoledì
     }
 
 }

@@ -6,16 +6,18 @@ export class Utente {
     cognome: String;
     email: String;
     role: String;
+    telefono : String;
     
     
 
-    constructor(id: Number, nome: String, cognome: String, email: String, username: String, role: String ) {
+    constructor(id: Number, nome: String, cognome: String, email: String, username: String, role: String, telefono: String ) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.username = username;
         this.role = role;
+        this.telefono = telefono;
         
     }
 
@@ -34,6 +36,18 @@ export class Utente {
     getRole() {
         return this.role;
     }
+
+    gettelefono() {
+        return this.telefono;
+    }
+
+    settelefono(telefono : string) {
+        if(telefono == ""){
+            throw console.error("Nome can't be null.");
+        }
+        this.telefono = telefono; 
+    }
+
 
 
 

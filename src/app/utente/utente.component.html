@@ -1,7 +1,7 @@
 
 <div *ngIf="isUser()" >
 
-  
+
 
   <div>
     <button (click)="reloadUsers()">Ricarica Utenti</button>
@@ -26,6 +26,28 @@
     <div *ngIf="utente">
       {{utente.nome}}
     </div>
+
+    <div class="table table-responsive">
+      <table  class="table">
+          <thead>
+          <tr>
+              <th scope="col">username</th>
+              <th scope="col">nome</th>
+              <th scope="col">cognome</th>
+              <th scope="col">numero</th>
+          </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let us of users">
+              <td>{{us.username}}</td>
+              <td>{{us.nome}}</td>
+              <td>{{us.cognome}}</td>
+              <td>{{us.telefono}}</td>
+          </tr>
+      
+          </tbody>
+      </table>
+      </div>
 
     
   </div>

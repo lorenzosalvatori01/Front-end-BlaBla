@@ -1,4 +1,4 @@
-<body>
+<body *ngIf="isUser()">
   <div class="immagine-sfondo">   
     </div>
       <nav>
@@ -89,3 +89,6 @@
     
   </body>
 
+  <div *ngIf="!isUser()" class="mt-5 text-center" style="margin-top: 100;">
+    <img src="../../assets/images/errore.png" alt="">
+  </div>

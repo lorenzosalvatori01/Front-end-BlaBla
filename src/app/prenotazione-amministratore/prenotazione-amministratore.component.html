@@ -47,26 +47,29 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">Prenotazioni della settimana</h5>
-            <table *ngIf="tutti" class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Giorno</th>
-                    <th scope="col">Ora</th>
-                    <th scope="col">Utente</th>
-                    <th scope="col">Tratta</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pre of prenotazioni">
-                    <td>{{pre.giornoSettimana}}</td>
-                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
-                    <td>{{pre.utente.nome}}</td>
-                    <td>{{pre.indirizzo}}</td>
-
-                </tr>
-            
-                </tbody>
-            </table>
+            <div class="table table-responsive">
+                <table *ngIf="tutti" class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Giorno</th>
+                        <th scope="col">Ora</th>
+                        <th scope="col">Utente</th>
+                        <th scope="col">Tratta</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let pre of prenotazioni">
+                        <td>{{pre.giornoSettimana}}</td>
+                        <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                        <td>{{pre.utente.nome}}</td>
+                        <td>{{pre.indirizzo}}</td>
+    
+                    </tr>
+                
+                    </tbody>
+                </table>
+            </div>
+            <div class="table table-responsive">
             <table *ngIf="lunedi" class="table">
                 <thead>
                 <tr>
@@ -86,6 +89,8 @@
             
                 </tbody>
             </table>
+            </div>
+            <div class="table table-responsive">
             <table *ngIf="martedi" class="table">
                 <thead>
                 <tr>
@@ -106,6 +111,8 @@
             
                 </tbody>
             </table>
+            </div>
+            <div class="table table-responsive">
             <table *ngIf="mercoledi" class="table">
                 <thead>
                 <tr>
@@ -126,6 +133,7 @@
             
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
 </div>

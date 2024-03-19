@@ -12,6 +12,8 @@ import { RegistrazioneUtenteComponent } from './registrazione/registrazione-uten
 import { HomeAmministratoreComponent } from './home-amministratore/home-amministratore.component';
 import { LoginAmministratoreComponent } from './login1/login-amministratore/login-amministratore.component';
 import { PrenotazioneAmministratoreComponent } from './prenotazione-amministratore/prenotazione-amministratore.component';
+import { GiovediComponent } from './prenotazione/giovedi/giovedi.component';
+import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
 
 const routes: Routes = [
 
@@ -24,6 +26,8 @@ const routes: Routes = [
   {  path: 'lunedi',  component: LunediComponent, canActivate: [AuthGuard]  },
   {  path: 'martedi',  component: MartediComponent, canActivate: [AuthGuard]  },
   {  path: 'mercoledi',  component: MercolediComponent, canActivate: [AuthGuard]  },
+  {  path: 'giovedi',  component: GiovediComponent, canActivate: [AuthGuard]  },
+  {  path: 'venerdi',  component: VenerdiComponent, canActivate: [AuthGuard]  },
   {  path: 'home',  component: HomeComponent, canActivate: [AuthGuard] },
   {  path: 'homeAmministratore',  component: HomeAmministratoreComponent },
   {  path: '',  component: HomeComponent },

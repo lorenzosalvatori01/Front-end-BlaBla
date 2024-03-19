@@ -23,6 +23,8 @@ import { RegistrazioneAmministratoreComponent } from './registrazione/registrazi
 import { HomeAmministratoreComponent } from './home-amministratore/home-amministratore.component';
 import { PrenotazioneAmministratoreComponent } from './prenotazione-amministratore/prenotazione-amministratore.component';
 import { ModalComponent } from './modal/modal.component';
+import { GiovediComponent } from './prenotazione/giovedi/giovedi.component';
+import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { ModalComponent } from './modal/modal.component';
     HomeAmministratoreComponent,
     PrenotazioneAmministratoreComponent,
     ModalComponent,
+    GiovediComponent,
+    VenerdiComponent,
   ],
   imports: [
     BrowserModule,

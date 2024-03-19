@@ -36,6 +36,14 @@ export class MercolediComponent {
     this.router.navigate(['/mercoledi']);
   }
 
+  giovedi() {
+    this.router.navigate(['/giovedi']);
+  }
+
+  venerdi() {
+    this.router.navigate(['/venerdi']);
+  }
+
   book() {
     const token = this.authService.getToken();
     if(token){

@@ -1,59 +1,53 @@
 
-<body>
+<body >
 
-
-  <nav>
-    <ul class="nav-bar">
-      <div class="title"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></div>
-      <input
-        type="checkbox"
-        id="check" />
-      <span class="menu">
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./login.html">Login</a></li>
-        <li><a href=".signup.html">Sing-Up</a></li>
-        <label
-          for="check"
-          class="close-menu"
-          ><i class="fas fa-times"></i
-        ></label>
-      </span>
-      <label
-        for="check"
-        class="open-menu"
-        ><i
-          class="fas fa-bars"
-          style="color: white"></i
-      ></label>
-    </ul>
-  </nav>
-  
-  <div class="contenitore-principale">
-  
-      <nav aria-label="breadcrumb" style="margin-bottom: -80px;">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="home">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">prenotazioni</li>
-        </ol>
+    <div class="immagine-sfondo"></div>
+      <nav>
+        <ul class="nav-bar">
+          <a (click)="home()"><div class="title"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></div></a>
+          <input
+            type="checkbox"
+            id="check" />
+          <span class="menu">
+            <li><a (click)="logOut()">Logout</a></li>
+            <label
+              for="check"
+              class="close-menu"
+              ><i class="fas fa-times"></i
+            ></label>
+          </span>
+          <label
+            for="check"
+            class="open-menu"
+            ><i
+              class="fas fa-bars"
+              style="color: white"></i
+          ></label>
+        </ul>
       </nav>
-
+    
+      <div class="contenitore-principale">
+        <!-- <nav aria-label="breadcrumb" style="margin-bottom: -80px;">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="home">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">prenotazioni</li>
+          </ol>
+        </nav> -->
+    
       <div class="contenitore-bottoni">
         <button class="bottone" (click)="lunedi()" >Lunedì</button>
         <button class="bottone" (click)="martedi()">Martedì</button>
-        <button class="bottone" (click)="mercoledi()" style="background-color: #495057;">Mercoledì</button>
-        <button class="bottone" (click)="giovedi()">Giovedì</button>
+        <button class="bottone" (click)="mercoledi()">Mercoledì</button>
+        <button class="bottone" (click)="giovedi()" style="background-color: #495057;">Giovedì</button>
         <button class="bottone" (click)="venerdi()">Venerdì</button>
       </div>
     
       <div style="margin-bottom:  -10px; margin-top: -20px;">
-        <h1>Mercoledi</h1>
+        <h1>Lunedi</h1>
       </div>
-
-      
   
-      <div *ngIf="checkIfMondayTuesdayOrWednesday" class="contenitore2">
+      <div   class="contenitore2">
         <div class="carta">
-            
           <div class="prima-riga">
             <div class="left">
               <div class="indicatore"></div>
@@ -61,12 +55,12 @@
             </div>
             <div class="right">
               <span style="color: #9a9a9a; ">Orario</span>
-              <span style="font-weight: 600;">Mar:11:00</span>
+              <span style="font-weight: 600;">Lun:11:00</span>
             </div>
           </div>
           <div class="separatore"></div>
           <div class="seconda-riga">
-            <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book()"> <span>Clicca per prenotare</span></a>
+            <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_15')"> <span>Clicca per prenotare</span></a>
           </div>
         </div>
         <div class="carta">
@@ -77,7 +71,7 @@
             </div>
             <div class="right">
               <span style="color: #9a9a9a; ">Orario</span>
-              <span style="font-weight: 600;">9:00</span>  
+              <span style="font-weight: 600;">Lun:9:00</span>  
             </div>
           </div>
           <div class="separatore"></div>
@@ -182,10 +176,9 @@
           </div>
         </div>
       </div>
-      <div *ngIf="!checkIfMondayTuesdayOrWednesday"  class="alert alert-danger" role="alert">
-        Non è possibile effettuare la prenotazione
-      </div>
-      
-  </div>
+        <div *ngIf="!isMonday"  class="alert alert-danger" role="alert">
+          Non è possibile effettuare la prenotazione
+        </div>
+    </div>
   
-  </body>
+    </body>
