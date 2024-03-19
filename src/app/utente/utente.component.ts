@@ -8,6 +8,7 @@ import { UtenteService } from '../../service/utente.service';
 import { UserService } from '../../service/user.service';
 import { BookingService } from '../../service/booking.service';
 import { BookingRequest } from '../models/booking-request';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,17 +19,15 @@ import { BookingRequest } from '../models/booking-request';
 export class UtenteComponent implements OnInit{
 
 
-  utente!:Utente;
+  utente!:Amministratore;
  
   users: Utente[] = [];  // Aggiungi questa riga per memorizzare gli utenti
 
   
   constructor(
-    private http: HttpClient,
+    private router: Router,
     private authService: AuthService,
-    private utenteService :UtenteService,
     private user :UserService,
-    private bookingService : BookingService,
     
     ) {
 
@@ -39,34 +38,16 @@ export class UtenteComponent implements OnInit{
   ngOnInit() {
     this.recuperaTutti();
     this.recuperadati();
-    this.book();
     this.printCurrentDay();
+    
 
   }
 
 
-  book() {
-    const token = this.authService.getToken();
-    if(token){
-      const bookingData: BookingRequest = {
-        fascia_oraria_prenotazione: "ORE_11",
-        giorno_prenotazione: "MERCOLEDI",
-        indirizzo: "MERCOLEDI",
-      };
-    
-      this.bookingService.bookBooking(token, bookingData).subscribe(
-        response => {
-          console.log('Prenotazione effettuata con successo:', response);
-        },
-        error => {
-          console.error('Errore durante la prenotazione:', error);
-        }
-      );
-    }
-    }
 
 
 
+  //METODO CHE RECUPERA TUTTI GLI UTENTI
   recuperaTutti(){
     const token = this.authService.getToken();
     if(token) {
@@ -83,10 +64,12 @@ export class UtenteComponent implements OnInit{
    }
   }
 
+
+  //METODO CHE RECUPERA I DATI DELLA PERSONA LOGGATA E LI SALVA SU THIS.UTENTE
   recuperadati(){
     const token = this.authService.getToken();
     if(token) {
-      this.user.getUser(token).subscribe(
+      this.user.getAdmin(token).subscribe(
         users => {
           this.utente = users;
         },
@@ -104,7 +87,7 @@ export class UtenteComponent implements OnInit{
 
   //METODO PER AUTENTICARE 
   isUser(): boolean {
-    if(this.utente?.role == "USER"){
+    if(this.utente?.role == "ADMIN"){
       return true
     }else{
       return false
@@ -134,6 +117,27 @@ printCurrentDay(): void {
   const currentDay = currentDate.toLocaleDateString('it-IT', { weekday: 'long' });
   console.log('Oggi è:', currentDay);
 }
+
+
+
+logOut(){
+  this.authService.logout();
+  this.router.navigate(['/loginUtente']);
+}
+
+//ROTTE
+prenota() {
+  this.router.navigate(['/lunedi']);
+}
+
+login() {
+  this.router.navigate(['/loginUtente']);
+}
+
+home() {
+  this.router.navigate(['/home']);
+}
+
 
 
 }

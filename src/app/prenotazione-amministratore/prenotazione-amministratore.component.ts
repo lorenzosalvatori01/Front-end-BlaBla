@@ -25,6 +25,8 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
   lunedi : boolean = false;
   martedi : boolean = false;
   mercoledi : boolean = false;
+  giovedi : boolean = false;
+  venerdi : boolean = false;
 
 
   constructor(
@@ -59,6 +61,8 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
       this.martedi = false;
       this.mercoledi = false;
       this.tutti=false;
+      this.giovedi = false;
+      this.venerdi = false;
     
     }
 
@@ -67,6 +71,8 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
       this.lunedi = false;
       this.mercoledi = false;
       this.tutti = false;
+      this.giovedi = false;
+      this.venerdi = false;
     }
 
     apriMer(){
@@ -74,18 +80,29 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
       this.lunedi = false;
       this.martedi = false;
       this.tutti = false;
+      this.giovedi = false;
+      this.venerdi = false;
     }
 
-    ciao(){
-      this.mercoledi = true;
-    }
-    login() {
-      this.router.navigate(['/loginUtente']);
+    apriGiov(){
+      this.giovedi = true
+      this.mercoledi = false;
+      this.lunedi = false;
+      this.martedi = false;
+      this.tutti = false;
+      this.venerdi = false;
     }
 
-    home() {
-      this.router.navigate(['/homeAmministratore']);
+    apriVen(){
+      this.venerdi = true
+      this.mercoledi = false;
+      this.lunedi = false;
+      this.martedi = false;
+      this.giovedi = false;
+      this.tutti = false;
     }
+
+ 
 
   recuperaTutti(){
     const token = this.authService.getToken();
@@ -123,4 +140,13 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
     }
   }
   
+
+
+  login() {
+    this.router.navigate(['/loginUtente']);
+  }
+
+  home() {
+    this.router.navigate(['/homeAmministratore']);
+  }
 }

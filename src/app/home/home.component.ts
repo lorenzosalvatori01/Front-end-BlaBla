@@ -29,6 +29,9 @@ export class HomeComponent implements OnInit {
       this.isUser();
   }  
 
+
+
+  //Recupero i dati dell'utente e li salvo nella variabile this.utente 
   recuperadati(){
     const token = this.authService.getToken();
     if(token) {
@@ -63,8 +66,10 @@ export class HomeComponent implements OnInit {
 
   logOut(){
     this.authService.logout();
+    this.router.navigate(['/loginUtente']);
   }
 
+  //ROTTE
   prenota() {
     this.router.navigate(['/lunedi']);
   }
@@ -77,5 +82,6 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
+ 
 
 }

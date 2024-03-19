@@ -41,17 +41,7 @@ export class LoginAmministratoreComponent {
     
   }
 
-  login() {
-    this.router.navigate(['/loginUtente']);
-  }
 
-  registrazione() {
-    this.router.navigate(['/registraUtente']);
-  }
-
-  home() {
-    this.router.navigate(['/home']);
-  }
   
   loginAdmin() {
     if (this.reg.valid) {
@@ -66,7 +56,6 @@ export class LoginAmministratoreComponent {
           // Salva il token nella memoria locale di Chrome
           this.authService.setToken(response.token);
 
-          alert('Login avvenuto con successo!');
           this.router.navigate(['homeAmministratore']);
 
           // Opzionale: reindirizza l'utente a una rotta protetta
@@ -80,6 +69,20 @@ export class LoginAmministratoreComponent {
       // Il form non è valido, gestisci l'errore di convalida
       console.error('Il form non è valido');
     }
+  }
+
+  //rotte
+
+  login() {
+    this.router.navigate(['/loginUtente']);
+  }
+
+  registrazione() {
+    this.router.navigate(['/registraUtente']);
+  }
+
+  home() {
+    this.router.navigate(['/home']);
   }
 
 

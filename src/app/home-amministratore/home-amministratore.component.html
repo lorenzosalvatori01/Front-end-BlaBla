@@ -12,7 +12,7 @@
           id="check" />
         <div class="menu">
           <div class="menu-container">
-            <li><a (click)="login()">Logout</a></li>
+            <li><a (click)="logOut()">Logout</a></li>
           </div>
           <label
             for="check"
@@ -33,11 +33,11 @@
     </nav>
     <main class="main-section">
       <div class="benvenuto">
-        <p class="testo-benvenuto">Benvenuto Amministratore!</p>
+        <p class="testo-benvenuto">Benvenuto {{user.nome}}!</p>
       </div>
       <div class="boxGrande2">
         <div class="textContainer">
-          <p class="testo">Hai bisogno di un passaggio? I nostri utenti saranno a tua completa disposizione!</p>
+          <h2>Home Blablacus</h2>
         </div>
         <button class="btn bottone1" (click)="prenota()">
           <div>
@@ -48,14 +48,14 @@
           </div>
           <p class="titoli">PRENOTAZ.</p>
         </button>
-        <button class="btn bottone2">
+        <button  class="btn bottone2"  (click)="paginaUtenti()">
           <div>
             <img
               class="icona-guidatori"
               src="/assets/icons/guidatori.png"
               alt="icona guidatori" />
           </div>
-          <p class="titoli">PROFILI GUIDATORI</p>
+          <p class="titoli">PROFILI UTENTI</p>
         </button>
         <button class="btn bottone3">
           <div>
@@ -92,7 +92,7 @@
   </body>
 
 
-  <div *ngIf="!isUser()" class="mt-5 text-center" style="margin-top: 100;">
+  <!-- <div *ngIf="!isUser()" class="mt-5 text-center" style="margin-top: 100;">
     <img src="../../assets/images/errore.png" alt="">
-  </div>
+  </div> -->
 

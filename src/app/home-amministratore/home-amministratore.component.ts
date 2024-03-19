@@ -40,7 +40,7 @@ user!:Amministratore ;
   }
 }
 
-
+    //RECUPERA I DATI DELLA PERSONA LOGGATA
     recuperadati(){
       const token = this.authService.getToken();
       if(token) {
@@ -59,10 +59,13 @@ user!:Amministratore ;
       
     }
 
-  login() {
-    this.router.navigate(['/loginUtente']);
+  //effettua il logout svuotando il token e riportandoti al login
+  logOut(){
+    this.authService.logout();
+    this.router.navigate(['/loginAmministratore']);
   }
   
+  //ROTTE
   home() {
     this.router.navigate(['/homeAmministratore']);
   }
@@ -70,5 +73,10 @@ user!:Amministratore ;
   prenota() {
     this.router.navigate(['/prenotazioni']);
   }
+
+  paginaUtenti() {
+    this.router.navigate(['/utente']);
+  }
+
 
 }

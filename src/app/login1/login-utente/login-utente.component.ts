@@ -71,7 +71,6 @@ export class LoginUtenteComponent {
           // Salva il token nella memoria locale di Chrome
           this.authService.setToken(response.token);
 
-          alert('Login avvenuto con successo!');
           this.router.navigate(['home']);
 
           // Opzionale: reindirizza l'utente a una rotta protetta

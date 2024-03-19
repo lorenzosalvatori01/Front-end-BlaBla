@@ -39,8 +39,8 @@
         <button class="btn btn-sm col-2 ms-4" (click)="apriLun()">lunedi</button>
         <button class="btn btn-sm col-2 ms-1" (click)="apriMar()">Martedì</button>
         <button class="btn btn-sm col-2 ms-1" (click)="apriMer()">Mercole</button>
-        <button class="btn btn-sm col-2 ms-1" (click)="ciao()">Giovedì</button>
-        <button class="btn btn-sm col-2 ms-1 " (click)="ciao()">Vener</button>
+        <button class="btn btn-sm col-2 ms-1" (click)="apriGiov()">Giovedì</button>
+        <button class="btn btn-sm col-2 ms-1 " (click)="apriVen()">Vener</button>
 
     </div>
     <div class="container  justify-content-center mt-5">
@@ -134,6 +134,52 @@
                 </tbody>
             </table>
             </div>
+            <div class="table table-responsive">
+            <table *ngIf="giovedi" class="table">
+                <thead>
+                <tr>
+                    <th scope="col">giorno</th>
+                    <th scope="col">ora</th>
+                    <th scope="col">utente</th>
+                    <th scope="col">Tratte</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pre of prenotazioni">
+                    <td>{{pre.giornoSettimana}}</td>
+                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                    <td>{{pre.utente.nome}}</td>
+                    <td>{{pre.indirizzo}}</td>
+
+                </tr>
+            
+                </tbody>
+            </table>
+            </div>
+
+            <div class="table table-responsive">
+            <table *ngIf="venerdi" class="table">
+                <thead>
+                <tr>
+                    <th scope="col">giorno</th>
+                    <th scope="col">ora</th>
+                    <th scope="col">utente</th>
+                    <th scope="col">Tratte</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pre of prenotazioni">
+                    <td>{{pre.giornoSettimana}}</td>
+                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                    <td>{{pre.utente.nome}}</td>
+                    <td>{{pre.indirizzo}}</td>
+
+                </tr>
+            
+                </tbody>
+            </table>
+            </div>
+        
         </div>
     </div>
 </div>
