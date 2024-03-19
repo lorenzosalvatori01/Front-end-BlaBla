@@ -44,6 +44,15 @@ export class MercolediComponent {
     this.router.navigate(['/venerdi']);
   }
 
+  home() {
+    this.router.navigate(['/home']);
+  }
+
+    logOut(){
+      this.authService.logout();
+    }
+
+
   book() {
     const token = this.authService.getToken();
     if(token){

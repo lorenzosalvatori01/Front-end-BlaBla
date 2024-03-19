@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../../modal/modal.component';
+import { ActivatedRoute, Router, UrlTree } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-registrazione-utente',
@@ -13,7 +16,7 @@ export class RegistrazioneUtenteComponent {
 
   reg: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, public dialog: MatDialog) {
+  constructor(private fb: FormBuilder, private http: HttpClient, public dialog: MatDialog, private router: Router, private route: ActivatedRoute,) {
     this.reg = this.fb.group({
       nome: ['', [Validators.required,]],
       cognome: ['', [Validators.required,]],
@@ -24,6 +27,13 @@ export class RegistrazioneUtenteComponent {
     });
   }
 
+  home() {
+    this.router.navigate(['/home']);
+  }
+
+  login() {
+    this.router.navigate(['/loginUtente']);
+  }
 
   openModal(): void {
     const dialogRef = this.dialog.open(ModalComponent, {

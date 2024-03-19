@@ -1,29 +1,13 @@
 
 
   <body>
+    <div class="immagine-sfondo">   
+    </div>
     <nav>
       <ul class="nav-bar">
-        <div class="title">SIT0WALO1.0</div>
-        <input
-          type="checkbox"
-          id="check" />
-        <span class="menu">
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./login.html">Login</a></li>
-          <li><a href="./signup.html">Sing-Up</a></li>
-          <label
-            for="check"
-            class="close-menu"
-            ><i class="fas fa-times"></i
-          ></label>
-        </span>
-        <label
-          for="check"
-          class="open-menu"
-          ><i
-            class="fas fa-bars"
-            style="color: #0057ff"></i
-        ></label>
+        <div class="title">
+          <a (click)="home()"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></a>
+        </div>
       </ul>
     </nav>
 
@@ -60,13 +44,13 @@
               (click)="registra()" />
           </form>
           <div class="signup">
-            <span class="signup">Hai già un account? <label for="check">Login</label></span>
+            <a (click)="login()"><span class="signup">Hai già un account? <label for="check">Login</label></span></a>
           </div>
         </div>
       </div>
 
       <div class="ritorna">
-        <a href="./index.html">Torna alla home</a>
+        <a >Torna alla home</a>
       </div>
 
 
