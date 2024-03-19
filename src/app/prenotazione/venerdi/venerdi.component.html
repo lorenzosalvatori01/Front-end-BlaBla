@@ -1,17 +1,15 @@
 
 <body>
 
-
+  <div class="immagine-sfondo"></div>
     <nav>
       <ul class="nav-bar">
-        <div class="title"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></div>
+        <a (click)="home()"><div class="title"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></div></a>
         <input
           type="checkbox"
           id="check" />
         <span class="menu">
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./login.html">Login</a></li>
-          <li><a href=".signup.html">Sing-Up</a></li>
+          <li><a (click)="logOut()">Logout</a></li>
           <label
             for="check"
             class="close-menu"
@@ -27,15 +25,10 @@
         ></label>
       </ul>
     </nav>
+
     
     <div class="contenitore-principale">
-    
-        <nav aria-label="breadcrumb" style="margin-bottom: -80px;">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="home">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">prenotazioni</li>
-          </ol>
-        </nav>
+
   
         <div class="contenitore-bottoni">
           <button class="bottone" (click)="lunedi()" >Lunedì</button>
@@ -46,7 +39,7 @@
         </div>
       
         <div style="margin-bottom:  -10px; margin-top: -20px;">
-          <h1>Mercoledi</h1>
+          <h1>Venerdi</h1>
         </div>
   
         
@@ -61,7 +54,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">Mar:11:00</span>
+                <span style="font-weight: 600;">Ven:11:00</span>
               </div>
             </div>
             <div class="separatore"></div>
@@ -77,7 +70,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">9:00</span>  
+                <span style="font-weight: 600;">Ven:9:00</span>  
               </div>
             </div>
             <div class="separatore"></div>
@@ -93,7 +86,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">15:00</span>  
+                <span style="font-weight: 600;">Ven:15:00</span>  
               </div>
             </div>
             <div class="separatore"></div>
@@ -109,7 +102,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">14:00</span>
+                <span style="font-weight: 600;">Ven:14:00</span>
               </div>
             </div>
             <div class="separatore"></div>
@@ -125,7 +118,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">10:00</span>   
+                <span style="font-weight: 600;">Ven:10:00</span>   
               </div>
             </div>
             <div class="separatore"></div>
@@ -141,7 +134,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">11:00</span>   
+                <span style="font-weight: 600;">Ven:11:00</span>   
               </div>
             </div>
             <div class="separatore"></div>
@@ -157,7 +150,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">11:00</span>  
+                <span style="font-weight: 600;">Ven:11:00</span>  
               </div>
             </div>
             <div class="separatore"></div>
@@ -173,7 +166,7 @@
               </div>
               <div class="right">
                 <span style="color: #9a9a9a; ">Orario</span>
-                <span style="font-weight: 600;">11:00</span>  
+                <span style="font-weight: 600;">Ven:11:00</span>  
               </div>
             </div>
             <div class="separatore"></div>

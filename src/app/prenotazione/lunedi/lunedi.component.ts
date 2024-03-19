@@ -63,9 +63,6 @@ export class LunediComponent implements OnInit{
     }
   }
 
-    logOut(){
-      this.authService.logout();
-    }
 
   //route
   lunedi() {
@@ -91,6 +88,10 @@ export class LunediComponent implements OnInit{
   home() {
     this.router.navigate(['/home']);
   }
+
+    logOut(){
+      this.authService.logout();
+    }
   
  
 
