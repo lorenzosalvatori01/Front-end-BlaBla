@@ -48,7 +48,7 @@
         <div class="card-body">
             <h5 class="card-title">Prenotazioni della settimana</h5>
             <div class="table table-responsive">
-                <table *ngIf="tutti" class="table">
+                <table  class="table">
                     <thead>
                     <tr>
                         <th scope="col">Giorno</th>
@@ -57,7 +57,7 @@
                         <th scope="col">Tratta</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngIf="tutti">
                         <tr *ngFor="let pre of prenotazioni">
                         <td>{{pre.giornoSettimana}}</td>
                         <td>{{pre.fasciaOrariaPrenotazione}}</td>
@@ -65,121 +65,52 @@
                         <td>{{pre.indirizzo}}</td>
     
                     </tr>
-                
                     </tbody>
+                    <tbody *ngIf="lunedi">
+                        <tr *ngFor="let pre of prenotazioniLunedi">
+                        <td>{{pre.giornoSettimana}}</td>
+                        <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                        <td>{{pre.utente.nome}}</td>
+                        <td>{{pre.indirizzo}}</td>
+                    </tr>
+                    </tbody>
+                    <tbody *ngIf="martedi" >
+                        <tr *ngFor="let pre of prenotazioniMartedi">
+                        <td>{{pre.giornoSettimana}}</td>
+                        <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                        <td>{{pre.utente.nome}}</td>
+                        <td>{{pre.indirizzo}}</td>
+
+                    </tr>
+                    </tbody>
+                    <tbody *ngIf="mercoledi" >
+                        <tr *ngFor="let pre of prenotazioniMercoledi">
+                        <td>{{pre.giornoSettimana}}</td>
+                        <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                        <td>{{pre.utente.nome}}</td>
+                        <td>{{pre.indirizzo}}</td>
+                    </tr>
+                    </tbody>
+                    <tbody *ngIf="giovedi" >
+                        <tr *ngFor="let pre of prenotazioniGiovedi">
+                        <td>{{pre.giornoSettimana}}</td>
+                        <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                        <td>{{pre.utente.nome}}</td>
+                        <td>{{pre.indirizzo}}</td>
+                    </tr>
+                    </tbody>
+                    <tbody  *ngIf="venerdi" >
+                        <tr *ngFor="let pre of prenotazioniVenerdi">
+                        <td>{{pre.giornoSettimana}}</td>
+                        <td>{{pre.fasciaOrariaPrenotazione}}</td>
+                        <td>{{pre.utente.nome}}</td>
+                        <td>{{pre.indirizzo}}</td>
+                    </tr>
+                    </tbody>
+            
                 </table>
             </div>
-            <div class="table table-responsive">
-            <table *ngIf="lunedi" class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Giorno</th>
-                    <th scope="col">Ora</th>
-                    <th scope="col">Utente</th>
-                    <th scope="col">Tratta</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pre of prenotazioniLunedi">
-                    <td>{{pre.giornoSettimana}}</td>
-                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
-                    <td>{{pre.utente.nome}}</td>
-                    <td>{{pre.indirizzo}}</td>
-                </tr>
-            
-                </tbody>
-            </table>
-            </div>
-            <div class="table table-responsive">
-            <table *ngIf="martedi" class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Giorno</th>
-                    <th scope="col">Ora</th>
-                    <th scope="col">Utente</th>
-                    <th scope="col">Tratta</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pre of prenotazioni">
-                    <td>{{pre.giornoSettimana}}</td>
-                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
-                    <td>{{pre.utente.nome}}</td>
-                    <td>{{pre.indirizzo}}</td>
-
-                </tr>
-            
-                </tbody>
-            </table>
-            </div>
-            <div class="table table-responsive">
-            <table *ngIf="mercoledi" class="table">
-                <thead>
-                <tr>
-                    <th scope="col">giorno</th>
-                    <th scope="col">ora</th>
-                    <th scope="col">utente</th>
-                    <th scope="col">Tratte</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pre of prenotazioni">
-                    <td>{{pre.giornoSettimana}}</td>
-                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
-                    <td>{{pre.utente.nome}}</td>
-                    <td>{{pre.indirizzo}}</td>
-
-                </tr>
-            
-                </tbody>
-            </table>
-            </div>
-            <div class="table table-responsive">
-            <table *ngIf="giovedi" class="table">
-                <thead>
-                <tr>
-                    <th scope="col">giorno</th>
-                    <th scope="col">ora</th>
-                    <th scope="col">utente</th>
-                    <th scope="col">Tratte</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pre of prenotazioni">
-                    <td>{{pre.giornoSettimana}}</td>
-                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
-                    <td>{{pre.utente.nome}}</td>
-                    <td>{{pre.indirizzo}}</td>
-
-                </tr>
-            
-                </tbody>
-            </table>
-            </div>
-
-            <div class="table table-responsive">
-            <table *ngIf="venerdi" class="table">
-                <thead>
-                <tr>
-                    <th scope="col">giorno</th>
-                    <th scope="col">ora</th>
-                    <th scope="col">utente</th>
-                    <th scope="col">Tratte</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let pre of prenotazioni">
-                    <td>{{pre.giornoSettimana}}</td>
-                    <td>{{pre.fasciaOrariaPrenotazione}}</td>
-                    <td>{{pre.utente.nome}}</td>
-                    <td>{{pre.indirizzo}}</td>
-
-                </tr>
-            
-                </tbody>
-            </table>
-            </div>
-        
+               
         </div>
     </div>
 </div>

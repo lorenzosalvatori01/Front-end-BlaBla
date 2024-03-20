@@ -19,9 +19,15 @@ import { Router } from '@angular/router';
 })
 export class PrenotazioneAmministratoreComponent  implements OnInit{
 
-  prenotazioni: any[] = [];  // Aggiungi questa riga per memorizzare gli utenti
-  prenotazioniLunedi: any[] = [];  // Aggiungi questa riga per memorizzare gli utenti
+  prenotazioni: any[] = [];  // Aggiungi questa riga per memorizzare gli prenotazioni
+  prenotazioniLunedi: any[] = [];  // Aggiungi questa riga per memorizzare le prenotazioni
+  prenotazioniMartedi: any[] = [];  // Aggiungi questa riga per memorizzare le prenotazioni
+  prenotazioniMercoledi: any[] = [];  // Aggiungi questa riga per memorizzare le prenotazioni
+  prenotazioniGiovedi: any[] = [];  // Aggiungi questa riga per memorizzare le prenotazioni
+  prenotazioniVenerdi: any[] = [];  // Aggiungi questa riga per memorizzare le prenotazioni
   tutti: boolean = true;  // Aggiungi questa riga per memorizzare gli utenti
+
+  //CONDIZIONI BOOLEANE CHE SE TRUE FANNO VISUALIZZARE IL DIV SUL COMPONENT (*ngIf)
   lunedi : boolean = false;
   martedi : boolean = false;
   mercoledi : boolean = false;
@@ -43,6 +49,10 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
 
     ngOnInit(): void {
         this.recuperaDiLunedi();
+        this.recuperaDiMartedi();
+        this.recuperaDiMercoledi();
+        this.recuperaDiGiovedi();
+        this.recuperaDiVenerdi();
         this.recuperaTutti();
     }
 
@@ -129,6 +139,78 @@ export class PrenotazioneAmministratoreComponent  implements OnInit{
       this.bookingService.getLunedi(token, bookData).subscribe(
         book => {
           this.prenotazioniLunedi = book;
+          console.log(book);
+        },
+        error => {
+          console.error('Errore durante il recupero delle prenotazioni:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
+  }
+
+  recuperaDiMartedi(){
+    const token = this.authService.getToken();
+    const bookData = { giorno_prenotazione: "MARTEDI" }; // Se `bookingData` deve essere un oggetto
+    if(token) {
+      this.bookingService.getLunedi(token, bookData).subscribe(
+        book => {
+          this.prenotazioniMartedi = book;
+          console.log(book);
+        },
+        error => {
+          console.error('Errore durante il recupero delle prenotazioni:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
+  }
+
+  recuperaDiMercoledi(){
+    const token = this.authService.getToken();
+    const bookData = { giorno_prenotazione: "MERCOLEDI" }; // Se `bookingData` deve essere un oggetto
+    if(token) {
+      this.bookingService.getLunedi(token, bookData).subscribe(
+        book => {
+          this.prenotazioniMercoledi = book;
+          console.log(book);
+        },
+        error => {
+          console.error('Errore durante il recupero delle prenotazioni:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
+  }
+
+  recuperaDiGiovedi(){
+    const token = this.authService.getToken();
+    const bookData = { giorno_prenotazione: "GIOVEDI" }; // Se `bookingData` deve essere un oggetto
+    if(token) {
+      this.bookingService.getLunedi(token, bookData).subscribe(
+        book => {
+          this.prenotazioniGiovedi = book;
+          console.log(book);
+        },
+        error => {
+          console.error('Errore durante il recupero delle prenotazioni:', error);
+        }
+      );
+    } else {
+      console.error('Token assente');
+    }
+  }
+
+  recuperaDiVenerdi(){
+    const token = this.authService.getToken();
+    const bookData = { giorno_prenotazione: "VENERDI" }; // Se `bookingData` deve essere un oggetto
+    if(token) {
+      this.bookingService.getLunedi(token, bookData).subscribe(
+        book => {
+          this.prenotazioniVenerdi = book;
           console.log(book);
         },
         error => {
