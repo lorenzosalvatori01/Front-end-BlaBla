@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { BookingRequest } from '../../models/booking-request';
 import { AuthService } from '../../../service/auth.service';
 import { BookingService } from '../../../service/booking.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../../modal/modal.component';
 
 
 @Component({
@@ -18,6 +20,7 @@ export class LunediComponent implements OnInit{
     private router: Router,
     private authService: AuthService,
     private bookingService : BookingService,
+    public dialog: MatDialog
 
 
     ) {}
@@ -41,19 +44,26 @@ export class LunediComponent implements OnInit{
   }
 
 
+  openModal( content: string): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '400px',
+      data: { title: "attenzione", content: content } // Passa i dati dinamici al modal
+    });
+  }
+
 
   book(ora : string,indirizzo : string){
     const token = this.authService.getToken();
     if(token){
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: ora,
-        giorno_prenotazione: "VENERDI",
+        giorno_prenotazione: "LUNEDI",
         indirizzo: indirizzo,
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
         response => {
-          alert(response.message)
+          this.openModal(response.message);
           console.log('Prenotazione effettuata con successo:', response);
         },
         error => {

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { BookingRequest } from '../../models/booking-request';
 import { AuthService } from '../../../service/auth.service';
 import { BookingService } from '../../../service/booking.service';
+import { ModalComponent } from '../../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-giovedi',
@@ -17,6 +19,7 @@ export class GiovediComponent {
     private router: Router,
     private authService: AuthService,
     private bookingService : BookingService,
+    public dialog: MatDialog
 
 
     ) {}
@@ -39,7 +42,12 @@ export class GiovediComponent {
     return currentDate.getDay() === 1; // 0 è Domenica, 1 è Lunedì, ecc.
   }
 
-
+  openModal( content: string): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '400px',
+      data: { title: "attenzione", content: content } // Passa i dati dinamici al modal
+    });
+  }
 
   book(ora : string, indirizzo:string){
     const token = this.authService.getToken();
@@ -52,7 +60,7 @@ export class GiovediComponent {
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
         response => {
-          alert(response.message)
+          this.openModal(response.message);
           console.log('Prenotazione effettuata con successo:', response);
         },
         error => {

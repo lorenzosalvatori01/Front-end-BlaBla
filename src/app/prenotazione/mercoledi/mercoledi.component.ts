@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { BookingRequest } from '../../models/booking-request';
 import { AuthService } from '../../../service/auth.service';
 import { BookingService } from '../../../service/booking.service';
+import { ModalComponent } from '../../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-mercoledi',
@@ -15,15 +17,20 @@ export class MercolediComponent {
     
     private router: Router,
     private authService: AuthService,
-    private bookingService : BookingService,) {
+    private bookingService : BookingService,
+    public dialog: MatDialog
+    ) {
 
     
   }
   
-  prenota(){
-    alert("hello")
+  openModal( content: string): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: '400px',
+      data: { title: "attenzione", content: content } // Passa i dati dinamici al modal
+    });
   }
-
+  
   lunedi() {
     this.router.navigate(['/lunedi']);
   }
@@ -64,7 +71,7 @@ export class MercolediComponent {
       
         this.bookingService.bookBooking(token, bookingData).subscribe(
           response => {
-            alert(response.message)
+            this.openModal(response.message);
             console.log('Prenotazione effettuata con successo:', response);
           },
           error => {

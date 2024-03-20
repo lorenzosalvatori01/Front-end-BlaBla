@@ -26,6 +26,7 @@ import { ModalComponent } from './modal/modal.component';
 import { GiovediComponent } from './prenotazione/giovedi/giovedi.component';
 import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
     ModalComponent,
     GiovediComponent,
     VenerdiComponent,
+
   ],
   imports: [
     BrowserModule,
