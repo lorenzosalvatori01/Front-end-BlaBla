@@ -15,6 +15,7 @@ import { PrenotazioneAmministratoreComponent } from './prenotazione-amministrato
 import { GiovediComponent } from './prenotazione/giovedi/giovedi.component';
 import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
 
+
 const routes: Routes = [
 
   {  path: 'registra',  component: RegistraComponent },
