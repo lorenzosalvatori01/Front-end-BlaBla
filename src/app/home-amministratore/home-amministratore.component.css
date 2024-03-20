@@ -238,7 +238,6 @@
     justify-content: center;
     grid-column: 1 / span 2; /* Occupa due colonne dalla colonna 1 */
     grid-row: 1;
-    text-size-adjust: 40px;
   }
   
   .testo {

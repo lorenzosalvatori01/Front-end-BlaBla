@@ -65,7 +65,7 @@ export class MercolediComponent {
       if(token){
         const bookingData: BookingRequest = {
           fascia_oraria_prenotazione: ora,
-          giorno_prenotazione: "VENERDI",
+          giorno_prenotazione: "MERCOLEDI",
           indirizzo: indirizzo,
         };
       

@@ -76,7 +76,7 @@ export class MartediComponent {
       if(token){
         const bookingData: BookingRequest = {
           fascia_oraria_prenotazione: ora,
-          giorno_prenotazione: "VENERDI",
+          giorno_prenotazione: "MARTEDI",
           indirizzo: indirizzo,
         };
       

@@ -1,5 +1,4 @@
 
-
   <body  *ngIf="isUser()">
     <div class="immagine-sfondo"></div>
 
@@ -38,7 +37,7 @@
       </div>
       <div class="boxGrande2">
         <div class="textContainer">
-          <h2 style="font-size: 35px;">Home Blablacus</h2>
+          <h2>Home Blablacus</h2>
         </div>
         <button class="btn bottone1" (click)="prenota()">
           <div>
@@ -49,10 +48,7 @@
           </div>
           <p class="titoli">PRENOTAZ.</p>
         </button>
-
-
-        <!-- Da inserire in questo bottone (click)="paginaUtenti()" -->
-        <button  class="btn bottone2">
+        <button  class="btn bottone2"  (click)="paginaUtenti()">
           <div>
             <img
               class="icona-guidatori"
@@ -61,14 +57,14 @@
           </div>
           <p class="titoli">PROFILI UTENTI</p>
         </button>
-        <button class="btn bottone3" (click)="registraAdmin()">
+        <button class="btn bottone3">
           <div>
             <img
               class="icona-tratte"
               src="assets/icons/tratte.png"
               alt="tratte icona" />
           </div>
-          <p class="titoli">INSERISCI ADMIN</p>
+          <p class="titoli">TRATTE</p>
         </button>
       </div>
       <div class="boxGrande3">
