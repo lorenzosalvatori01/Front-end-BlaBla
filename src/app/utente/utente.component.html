@@ -1,22 +1,38 @@
 
 
-<div *ngIf="isUser()" >
-  <nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-          <a class="nav-link" href="#">Features</a>
-          <a class="nav-link" href="#">Pricing</a>
-        </div>
+<div *ngIf="isUser()">
+  <div class="immagine-sfondo"></div>
+
+  <nav>
+    <ul class="nav-bar">
+      <div class="title">
+        <a (click)="home()"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></a>
       </div>
-    </div>
+      <input
+        type="checkbox"
+        id="check" />
+      <div class="menu">
+        <div class="menu-container">
+          <li><a (click)="login()">Logout</a></li>
+        </div>
+        <label
+          for="check"
+          class="close-menu"
+          ><i
+            class="fas fa-times"
+            style="color: black"></i
+        ></label>
+      </div>
+      <label
+        for="check"
+        class="open-menu"
+        ><i
+          class="fas fa-bars"
+          style="color: white"></i
+      ></label>
+    </ul>
   </nav>
-  
+
   <h1>UTENTI REGISTRATI</h1>
 
   <div class="container  justify-content-center mt-5">
