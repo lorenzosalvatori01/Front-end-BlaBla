@@ -42,13 +42,13 @@ export class LunediComponent implements OnInit{
 
 
 
-  book(ora : string){
+  book(ora : string,indirizzo : string){
     const token = this.authService.getToken();
     if(token){
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: ora,
-        giorno_prenotazione: "LUNEDI",
-        indirizzo: "cus-camerino",
+        giorno_prenotazione: "VENERDI",
+        indirizzo: indirizzo,
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(
@@ -62,6 +62,7 @@ export class LunediComponent implements OnInit{
       );
     }
   }
+
 
 
   //route

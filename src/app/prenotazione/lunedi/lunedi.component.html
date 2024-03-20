@@ -46,28 +46,28 @@
       <h1>Lunedi</h1>
     </div>
 
-    <div   class="contenitore2">
+    <div   *ngIf="isMonday"  class="contenitore2">
       <div class="carta">
         <div class="prima-riga">
           <div class="left">
             <div class="indicatore"></div>
-            <span class="cus">cus-camerino</span>
+            <span class="cus">camerino-cus</span>
           </div>
           <div class="right">
             <span style="color: #9a9a9a; ">Orario</span>
-            <span style="font-weight: 600;">Lun:11:00</span>
+            <span style="font-weight: 600;">Lun:08:30</span>
           </div>
         </div>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_11')"> <span>Clicca per prenotare</span></a>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_8_30','camerino-cus')"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">
         <div class="prima-riga">
           <div class="left">
             <div class="indicatore"></div>
-            <span class="cus">cus-camerino</span>
+            <span class="cus">camerino-cus</span>
           </div>
           <div class="right">
             <span style="color: #9a9a9a; ">Orario</span>
@@ -76,7 +76,7 @@
         </div>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_9')"> <span>Clicca per prenotare</span></a>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_9','camerino-cus')"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">
@@ -87,12 +87,12 @@
           </div>
           <div class="right">
             <span style="color: #9a9a9a; ">Orario</span>
-            <span style="font-weight: 600;">Lun:15:00</span>  
+            <span style="font-weight: 600;">Lun:09:30</span>  
           </div>
         </div>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_15')"> <span>Clicca per prenotare</span></a>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_9_30','cus-camerino')"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">
@@ -108,7 +108,7 @@
         </div>
         <div class="separatore"></div>
         <div class="seconda-riga">
-          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_14')"> <span>Clicca per prenotare</span></a>
+          <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_14','cus-camerino')"> <span>Clicca per prenotare</span></a>
         </div>
       </div>
       <div class="carta">

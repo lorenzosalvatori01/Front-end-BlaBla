@@ -23,6 +23,8 @@ export class MartediComponent {
     
   }
 
+
+  //controlla il giorno corrente
   checkIfMondayOrTuesday(): boolean {
     const currentDate = new Date();
     const dayOfWeek = currentDate.getDay();
@@ -60,26 +62,26 @@ export class MartediComponent {
       this.authService.logout();
     }
 
-  book(ora : string){
-    const token = this.authService.getToken();
-    if(token){
-      const bookingData: BookingRequest = {
-        fascia_oraria_prenotazione: ora,
-        giorno_prenotazione: "MARTEDI",
-        indirizzo: "cus-camerino",
-      };
-    
-      this.bookingService.bookBooking(token, bookingData).subscribe(
-        response => {
-          alert(response.message)
-          console.log('Prenotazione effettuata con successo:', response);
-        },
-        error => {
-          console.error('Errore durante la prenotazione:', error);
-        }
-      );
+    book(ora : string,indirizzo : string){
+      const token = this.authService.getToken();
+      if(token){
+        const bookingData: BookingRequest = {
+          fascia_oraria_prenotazione: ora,
+          giorno_prenotazione: "VENERDI",
+          indirizzo: indirizzo,
+        };
+      
+        this.bookingService.bookBooking(token, bookingData).subscribe(
+          response => {
+            alert(response.message)
+            console.log('Prenotazione effettuata con successo:', response);
+          },
+          error => {
+            console.error('Errore durante la prenotazione:', error);
+          }
+        );
+      }
     }
-  }
 
 
 }

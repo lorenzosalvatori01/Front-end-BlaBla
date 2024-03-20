@@ -41,13 +41,13 @@ export class GiovediComponent {
 
 
 
-  book(ora : string){
+  book(ora : string, indirizzo:string){
     const token = this.authService.getToken();
     if(token){
       const bookingData: BookingRequest = {
         fascia_oraria_prenotazione: ora,
         giorno_prenotazione: "GIOVEDI",
-        indirizzo: "cus-camerino",
+        indirizzo: indirizzo,
       };
     
       this.bookingService.bookBooking(token, bookingData).subscribe(

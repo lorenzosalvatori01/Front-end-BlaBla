@@ -70,10 +70,33 @@ export class HomeComponent implements OnInit {
   }
 
   //ROTTE
-  prenota() {
-    this.router.navigate(['/lunedi']);
+  prenota(): void {
+    const currentDay = new Date().getDay(); // Ottieni il giorno corrente (0 = Domenica, 1 = Lunedì, ..., 6 = Sabato)
+    
+    switch (currentDay) {
+      case 1:
+        this.router.navigate(['/lunedi']);
+        break;
+      case 2:
+        this.router.navigate(['/martedi']);
+        break;
+      case 3:
+        this.router.navigate(['/mercoledi']);
+        break;
+      case 4:
+        this.router.navigate(['/giovedi']);
+        break;
+      case 5:
+        this.router.navigate(['/venerdi']);
+        break;
+      default:
+        // Altri giorni della settimana possono essere gestiti qui
+        // Ad esempio, puoi navigare a una pagina predefinita per i giorni non lavorativi
+        break;
+    }
   }
 
+  
   login() {
     this.router.navigate(['/loginUtente']);
   }

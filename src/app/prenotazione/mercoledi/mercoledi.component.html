@@ -49,16 +49,16 @@
           <div class="prima-riga">
             <div class="left">
               <div class="indicatore"></div>
-              <span class="cus">cus-camerino</span>
+              <span class="cus">camerino-cus</span>
             </div>
             <div class="right">
               <span style="color: #9a9a9a; ">Orario</span>
-              <span style="font-weight: 600;">Mer:11:00</span>
+              <span style="font-weight: 600;">Mer:09:30</span>
             </div>
           </div>
           <div class="separatore"></div>
           <div class="seconda-riga">
-            <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book()"> <span>Clicca per prenotare</span></a>
+            <a  style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_9_30','camerino-cus')"> <span>Clicca per prenotare</span></a>
           </div>
         </div>
         <div class="carta">
@@ -69,12 +69,12 @@
             </div>
             <div class="right">
               <span style="color: #9a9a9a; ">Orario</span>
-              <span style="font-weight: 600;">Mer:9:00</span>  
+              <span style="font-weight: 600;">Mer:10:00</span>  
             </div>
           </div>
           <div class="separatore"></div>
           <div class="seconda-riga">
-            <span style="color: #2e2e2e; font-size: 0.9rem;">Clicca per prenotare</span>
+            <span style="color: #2e2e2e; font-size: 0.9rem;" (click)="book('ORE_10','cus-camerino')">Clicca per prenotare</span>
           </div>
         </div>
         <div class="carta">
