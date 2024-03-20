@@ -1,30 +1,57 @@
-<form  [formGroup]='prova' (ngSubmit)="onSubmit()">
 
-    <div>
-        <label for="nome">nome</label>
-        <input id="nome" type="text" formControlName="nome">
-        <!-- Aggiungi messaggi di errore per il campo email -->
-    </div>
 
-    <div>
-        <label for="cognome">cognome</label>
-        <input id="cognome" type="text" formControlName="cognome">
-        <!-- Aggiungi messaggi di errore per il campo email -->
+<body>
+    <div class="immagine-sfondo">   
     </div>
-    <!-- Campi del form -->
-    <div>
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email">
-        <!-- Aggiungi messaggi di errore per il campo email -->
-    </div>
+    <nav>
+      <ul class="nav-bar">
+        <div class="title">
+          <a (click)="home()"><img src="../../assets/icons/profilo.png" alt="icona profilo" class="icona-profilo"></a>
+        </div>
+      </ul>
+    </nav>
+
+    <body>
+      <nav></nav>
+
+      <div class="container">
+        <div class="login form">
+          <header>Inserisci Admin</header>
+          <form  [formGroup]='prova' action="#">
+            <div class="signup-row">
+              <div class="signup-col">
+                <label for="nome">nome</label>
+                <input id="nome" type="text" formControlName="nome">
+                <label for="cognome">cognome</label>
+                 <input id="cognome" type="text" formControlName="cognome">
+              </div>
+              <div class="signup-col">
+                <label for="email">Email</label>
+                <input id="email" type="text" formControlName="email">
+                <label for="password">password</label>
+              <input id="password" type="password" formControlName="password">
+              </div>
+              <div class="signup-col">
+
+                <label for="telefono">numero</label>
+                <input id="telefono" type="text" formControlName="telefono">
+              </div>
+            </div>
+            <input
+              type="button"
+              class="button"
+              value="Inserisci"
+              />
+          </form>
+        </div>
+      </div>
+
+      <div class="ritorna">
+        <a (click)="home()">Torna alla home</a>
+      </div>
+
+
+   
+    </body>
   
-    <div>
-        <label for="password">Password</label>
-        <input id="password" type="password" formControlName="password">
-        <!-- Aggiungi messaggi di errore per il campo password -->
-    </div>
-  
- 
-  
-    <button type="submit" >Submit</button>
-  </form>
+

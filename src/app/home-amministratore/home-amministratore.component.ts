@@ -78,5 +78,8 @@ user!:Amministratore ;
     this.router.navigate(['/utente']);
   }
 
+  registraAdmin() {
+    this.router.navigate(['/registra']);
+  }
 
 }
