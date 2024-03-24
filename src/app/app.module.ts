@@ -25,6 +25,7 @@ import { PrenotazioneAmministratoreComponent } from './prenotazione-amministrato
 import { ModalComponent } from './modal/modal.component';
 import { GiovediComponent } from './prenotazione/giovedi/giovedi.component';
 import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
+import { HeaderUtenteComponent } from './header-utente/header-utente.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { VenerdiComponent } from './prenotazione/venerdi/venerdi.component';
     ModalComponent,
     GiovediComponent,
     VenerdiComponent,
+    HeaderUtenteComponent,
 
   ],
   imports: [

@@ -28,6 +28,9 @@ body {
 
 }
 
+
+
+
 .immagine-sfondo::after {
   content: "";
   position: absolute;
@@ -38,6 +41,28 @@ body {
   background: rgba(0, 0, 0, 0.5); /* Overlay nero con opacità per scurire l'immagine */
   z-index: 1; /* Assicura che l'overlay sia sopra l'immagine di sfondo */
 }
+
+
+
+
+.bigger-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12vh;
+}
+
+.container-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.logo {
+  width: 100%;
+}
+
 
 nav {
   padding: 1rem 0.2rem 0 0.2rem;

@@ -31,7 +31,7 @@ const routes: Routes = [
   {  path: 'venerdi',  component: VenerdiComponent, canActivate: [AuthGuard]  },
   {  path: 'home',  component: HomeComponent, canActivate: [AuthGuard] },
   {  path: 'homeAmministratore',  component: HomeAmministratoreComponent },
-  {  path: '',  component: HomeComponent },
+  {  path: '',  component: LoginUtenteComponent },
 ];
 
 @NgModule({
